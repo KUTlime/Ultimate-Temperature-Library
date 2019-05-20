@@ -1,8 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Ultimate_Temperature_Library</RootNamespace>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <RootNamespace>UltimateTemperatureLibrary</RootNamespace>
+    <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer</PackageTags>
+    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.</Description>
   </PropertyGroup>
 
 </Project>
