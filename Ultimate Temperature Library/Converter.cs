@@ -3,7 +3,7 @@
     /// <summary>
     /// Provides a complex double-to-double conversion between all temperature units.
     /// </summary>
-    public static class Convertor
+    public static class Converter
     {
         /// <summary>
         /// Converts a double value in Celsius to double value in Kelvin.
