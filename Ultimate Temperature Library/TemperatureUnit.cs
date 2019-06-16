@@ -39,5 +39,13 @@ namespace UltimateTemperatureLibrary
         /// An internal value storage.
         /// </summary>
         public virtual Double Value { get; set; }
+
+        /// <summary>
+        /// Returns a temperature value in Kelvins.
+        /// </summary>
+        /// <returns>A temp value in Kelvins.</returns>
+        /// <remarks>On internal use in operators.</remarks>
+        protected abstract Double GetValueInKelvin();
+
     }
 }

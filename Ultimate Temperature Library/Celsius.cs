@@ -48,6 +48,11 @@ namespace UltimateTemperatureLibrary
             }
         }
 
+        protected override double GetValueInKelvin()
+        {
+            return Converter.Cel2Kel(Value);
+        }
+
 
         public Celsius ToCelsius()
         {
