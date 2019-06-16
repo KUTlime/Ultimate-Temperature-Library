@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace UltimateTemperatureLibrary
 {
-    public class Celsius : TemperatureUnit, IUnitConversion
+    public class Celsius : TemperatureUnit
     {
         public Celsius()
         {
@@ -59,7 +59,6 @@ namespace UltimateTemperatureLibrary
             throw new NotImplementedException();
         }
 
-        public
 
         public Fahrenheit ToFahrenheit()
         {
