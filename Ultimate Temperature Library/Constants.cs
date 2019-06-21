@@ -33,13 +33,13 @@
         /// An absolute thermodynamic zero temperature in [°] Delisle.
         /// </summary>
         /// <seealso cref="https://en.wikipedia.org/wiki/Delisle_scale"/>
-        public const double AbsoluteZeroInDelisle = -559.73;
+        public const double AbsoluteZeroInDelisle = 559.725;
 
         /// <summary>
         /// An absolute thermodynamic zero temperature in [°] Newton.
         /// </summary>
         /// <seealso cref="https://en.wikipedia.org/wiki/Newton_scale"/>
-        public const double AbsoluteZeroInNewton = -90.14;
+        public const double AbsoluteZeroInNewton = -90.1395;
 
         /// <summary>
         /// An absolute thermodynamic zero temperature in Réaumur.
@@ -51,7 +51,7 @@
         /// An absolute thermodynamic zero temperature in Kelvin.
         /// </summary>
         /// <seealso cref="https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
-        public const double AbsoluteZeroInRømer = -135.90;
+        public const double AbsoluteZeroInRømer = -135.90375;
 
         /// <summary>
         /// A temperature of H2O melting point in [°] Celsius.
@@ -123,7 +123,7 @@
         /// A temperature of H2O boiling point in [°] Rankine.
         /// </summary>
         /// <seealso cref="https://en.wikipedia.org/wiki/Rankine_scale"/>
-        public const double BoilingPointH2OInRankine = 671.64;
+        public const double BoilingPointH2OInRankine = 671.67;
 
         /// <summary>
         /// A temperature of H2O boiling point in [°] Delisle.

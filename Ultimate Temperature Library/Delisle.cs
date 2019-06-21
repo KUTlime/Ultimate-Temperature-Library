@@ -1,6 +1,6 @@
 ﻿namespace UltimateTemperatureLibrary
 {
-    public class Delisle : TemperatureUnit, IUnitConversion
+    public class Delisle : TemperatureUnit
     {
         public Celsius ToCelsius()
         {
@@ -38,6 +38,11 @@
         }
 
         public Rømer ToRømer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override double GetValueInKelvin()
         {
             throw new System.NotImplementedException();
         }

@@ -1,6 +1,6 @@
 ﻿namespace UltimateTemperatureLibrary
 {
-    public class Rømer : TemperatureUnit, IUnitConversion
+    public class Rømer : TemperatureUnit
     {
         public Celsius ToCelsius()
         {
@@ -38,6 +38,11 @@
         }
 
         public Rømer ToRømer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override double GetValueInKelvin()
         {
             throw new System.NotImplementedException();
         }
