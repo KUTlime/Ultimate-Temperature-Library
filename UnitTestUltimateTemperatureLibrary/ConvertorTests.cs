@@ -422,16 +422,16 @@ namespace UnitTestUltimateTemperatureLibrary
 
             [TestCategory(TestCategory.BasicTests)]
             [DataTestMethod]
-            [DataRow((UInt32)1, (double)184, (double)283.5, "The lowest measured temp on Earth.", 1e-13)]
-            [DataRow((UInt32)2, (double)255.37, (double)176.67, "The Fahrenheit's mixture of ice and salt", 1e-13)]
-            [DataRow((UInt32)3, (double)288, (double)127.5, "The average temperature of the Earth surface.", 1e-13)]
-            [DataRow((UInt32)4, (double)309.95, (double)94.8, "The average human body temperature.", 1e-13)]
-            [DataRow((UInt32)5, (double)331, (double)63, "The highest measured temperature on Earth.", 1e-13)]
-            [DataRow((UInt32)6, (double)1941, (double)-2352, "The melting point of titanium.", 1e-13)]
-            [DataRow((UInt32)7, (double)5800, (double)-10440, "The temperature of the Sun surface.", 1e-13)]
+            [DataRow((UInt32)1, (double)184, (double)283.725, "The lowest measured temp on Earth.", (double)1e-13)]
+            [DataRow((UInt32)2, (double)255.37, (double)176.67, "The Fahrenheit's mixture of ice and salt", (double)1e-13)]
+            [DataRow((UInt32)3, (double)288, (double)127.725, "The average temperature of the Earth surface.", (double)1e-13)]
+            [DataRow((UInt32)4, (double)309.95, (double)94.8, "The average human body temperature.", (double)1e-13)]
+            [DataRow((UInt32)5, (double)331, (double)63.225, "The highest measured temperature on Earth.", (double)1e-13)]
+            [DataRow((UInt32)6, (double)1941, (double)-2351.775, "The melting point of titanium.", (double)1e-12)]
+            [DataRow((UInt32)7, (double)5800, (double)-8140.275, "The temperature of the Sun surface.", (double)1e-12)] // We can't beat the difference 9,something e-13.
             public void WikiListTemperatureTest(UInt32 testNumber, double tempInKelvin, double tempInDelisle, string testDescription, double delta)
             {
-                Assert.AreEqual(tempInKelvin, Converter.Kel2Del(tempInDelisle), 1e-13);
+                Assert.AreEqual(tempInDelisle, Converter.Kel2Del(tempInKelvin), delta);
             }
         }
 
@@ -549,6 +549,1055 @@ namespace UnitTestUltimateTemperatureLibrary
             public void WikiListTemperatureTest(UInt32 testNumber, double tempInKelvin, double tempInRømer, string testDescription, double delta)
             {
                 Assert.AreEqual(tempInRømer, Converter.Kel2Røm(tempInKelvin), delta);
+            }
+        }
+
+        [TestClass]
+        public class Cel2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.Cel2Fah(Constants.AbsoluteZeroInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.Cel2Fah(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.Cel2Fah(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Cel2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.Cel2Ran(Constants.AbsoluteZeroInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.Cel2Ran(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.Cel2Ran(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Cel2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.Cel2Del(Constants.AbsoluteZeroInCelsius), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.Cel2Del(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.Cel2Del(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Cel2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Cel2New(Constants.AbsoluteZeroInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Cel2New(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Cel2New(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Cel2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.Cel2Réau(Constants.AbsoluteZeroInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.Cel2Réau(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.Cel2Réau(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Cel2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.Cel2Røm(Constants.AbsoluteZeroInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.Cel2Røm(Constants.MeltingPointH2OInCelsius), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.Cel2Røm(Constants.BoilingPointH2OInCelsius), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Fah2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.Fah2Cel(Constants.AbsoluteZeroInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.Fah2Cel(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.Fah2Cel(Constants.BoilingPointH2OInFahrenheit), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Fah2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.Fah2Ran(Constants.AbsoluteZeroInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.Fah2Ran(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.Fah2Ran(Constants.BoilingPointH2OInFahrenheit), 1e-12);
+            }
+        }
+
+        [TestClass]
+        public class Fah2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.Fah2Del(Constants.AbsoluteZeroInFahrenheit), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.Fah2Del(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.Fah2Del(Constants.BoilingPointH2OInFahrenheit), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Fah2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Fah2New(Constants.AbsoluteZeroInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Fah2New(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Fah2New(Constants.BoilingPointH2OInFahrenheit), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Fah2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.Fah2Réau(Constants.AbsoluteZeroInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.Fah2Réau(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.Fah2Réau(Constants.BoilingPointH2OInFahrenheit), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Fah2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.Fah2Røm(Constants.AbsoluteZeroInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.Fah2Røm(Constants.MeltingPointH2OInFahrenheit), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.Fah2Røm(Constants.BoilingPointH2OInFahrenheit), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.Ran2Cel(Constants.AbsoluteZeroInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.Ran2Cel(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.Ran2Cel(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.Ran2Fah(Constants.AbsoluteZeroInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.Ran2Fah(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.Ran2Fah(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.Ran2Del(Constants.AbsoluteZeroInRankine), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.Ran2Del(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.Ran2Del(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Ran2New(Constants.AbsoluteZeroInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Ran2New(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Ran2New(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.Ran2Réau(Constants.AbsoluteZeroInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.Ran2Réau(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.Ran2Réau(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Ran2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.Ran2Røm(Constants.AbsoluteZeroInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.Ran2Røm(Constants.MeltingPointH2OInRankine), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.Ran2Røm(Constants.BoilingPointH2OInRankine), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.Del2Cel(Constants.AbsoluteZeroInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.Del2Cel(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.Del2Cel(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.Del2Fah(Constants.AbsoluteZeroInDelisle), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.Del2Fah(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.Del2Fah(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.Del2Ran(Constants.AbsoluteZeroInDelisle), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.Del2Ran(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.Del2Ran(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Del2New(Constants.AbsoluteZeroInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Del2New(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Del2New(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.Del2Réau(Constants.AbsoluteZeroInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.Del2Réau(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.Del2Réau(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Del2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.Del2Røm(Constants.AbsoluteZeroInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.Del2Røm(Constants.MeltingPointH2OInDelisle), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.Del2Røm(Constants.BoilingPointH2OInDelisle), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.New2Cel(Constants.AbsoluteZeroInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.New2Cel(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.New2Cel(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.New2Fah(Constants.AbsoluteZeroInNewton), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.New2Fah(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.New2Fah(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.New2Ran(Constants.AbsoluteZeroInNewton), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.New2Ran(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.New2Ran(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.New2Del(Constants.AbsoluteZeroInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.New2Del(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.New2Del(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.New2Réau(Constants.AbsoluteZeroInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.New2Réau(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.New2Réau(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class New2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.New2Røm(Constants.AbsoluteZeroInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.New2Røm(Constants.MeltingPointH2OInNewton), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.New2Røm(Constants.BoilingPointH2OInNewton), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.Réau2Cel(Constants.AbsoluteZeroInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.Réau2Cel(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.Réau2Cel(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.Réau2Fah(Constants.AbsoluteZeroInRéaumur), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.Réau2Fah(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.Réau2Fah(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.Réau2Ran(Constants.AbsoluteZeroInRéaumur), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.Réau2Ran(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.Réau2Ran(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.Réau2Del(Constants.AbsoluteZeroInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.Réau2Del(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.Réau2Del(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Réau2New(Constants.AbsoluteZeroInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Réau2New(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Réau2New(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Réau2RømTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRømer, Converter.Réau2Røm(Constants.AbsoluteZeroInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRømer, Converter.Réau2Røm(Constants.MeltingPointH2OInRéaumur), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRømer, Converter.Réau2Røm(Constants.BoilingPointH2OInRéaumur), 1e-13);
+            }
+        }
+        [TestClass]
+        public class Røm2CelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Converter.Røm2Cel(Constants.AbsoluteZeroInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, Converter.Røm2Cel(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInCelsius, Converter.Røm2Cel(Constants.BoilingPointH2OInRømer), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Røm2FahTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInFahrenheit, Converter.Røm2Fah(Constants.AbsoluteZeroInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInFahrenheit, Converter.Røm2Fah(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, Converter.Røm2Fah(Constants.BoilingPointH2OInRømer), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Røm2RanTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRankine, Converter.Røm2Ran(Constants.AbsoluteZeroInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRankine, Converter.Røm2Ran(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRankine, Converter.Røm2Ran(Constants.BoilingPointH2OInRømer), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Røm2DelTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInDelisle, Converter.Røm2Del(Constants.AbsoluteZeroInRømer), 1e-12);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInDelisle, Converter.Røm2Del(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInDelisle, Converter.Røm2Del(Constants.BoilingPointH2OInRømer), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Røm2NewTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInNewton, Converter.Røm2New(Constants.AbsoluteZeroInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInNewton, Converter.Røm2New(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInNewton, Converter.Røm2New(Constants.BoilingPointH2OInRømer), 1e-13);
+            }
+        }
+
+        [TestClass]
+        public class Røm2RéauTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void AbsoluteZeroTest()
+            {
+                Assert.AreEqual(Constants.AbsoluteZeroInRéaumur, Converter.Røm2Réau(Constants.AbsoluteZeroInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20MeltingPointTest()
+            {
+                Assert.AreEqual(Constants.MeltingPointH2OInRéaumur, Converter.Røm2Réau(Constants.MeltingPointH2OInRømer), 1e-13);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void H20BoilingPointTest()
+            {
+                Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, Converter.Røm2Réau(Constants.BoilingPointH2OInRømer), 1e-13);
             }
         }
     }

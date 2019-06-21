@@ -233,7 +233,7 @@
         /// <returns>A value in Celsius.</returns>
         public static double Ran2Cel(double value)
         {
-            return Kel2Ran(Ran2Kel(value));
+            return Kel2Cel(Ran2Kel(value));
         }
 
         /// <summary>
