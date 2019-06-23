@@ -1,7 +1,36 @@
-﻿namespace UltimateTemperatureLibrary
+﻿using System;
+using UltimateTemperatureLibrary.Interfaces;
+
+namespace UltimateTemperatureLibrary
 {
-    public class Delisle : TemperatureUnit
+    public class Delisle : TemperatureUnit, IConversionToKelvin
     {
+        public Delisle(double value)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Delisle()
+        {
+            Value = Constants.AbsoluteZeroInDelisle;
+        }
+
+        public sealed override double Value
+        {
+            get => base.Value;
+            set
+            {
+                if (value < Constants.AbsoluteZeroInDelisle)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Delisle scale range.");
+                }
+
+                base.Value = value;
+            }
+        }
+
+        public override string[] RegexPatterns { get; protected set; } = { "D", "De", "d", "de" };
+
         public Celsius ToCelsius()
         {
             throw new System.NotImplementedException();

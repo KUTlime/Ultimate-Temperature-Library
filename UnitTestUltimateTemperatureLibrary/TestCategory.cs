@@ -1,4 +1,4 @@
-namespace UnitTestUltimateTemperatureLibrary
+namespace UltimateTemperatureLibrary.UnitTests
 {
     /// <summary>
     /// Provides the test category strings used in attributes.

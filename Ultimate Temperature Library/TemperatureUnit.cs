@@ -7,6 +7,7 @@ namespace UltimateTemperatureLibrary
     /// </summary>
     public abstract class TemperatureUnit
     {
+
         /// <summary>
         /// Returns a string that represents an interval double value.
         /// </summary>
@@ -47,5 +48,8 @@ namespace UltimateTemperatureLibrary
         /// <remarks>On internal use in operators.</remarks>
         protected abstract Double GetValueInKelvin();
 
+        public virtual string[] RegexPatterns { get; protected set; } = { };
+
+        public virtual string RegexPatterRaw { get; protected set; } = String.Empty;
     }
 }

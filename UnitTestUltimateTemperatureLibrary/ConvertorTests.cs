@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using UltimateTemperatureLibrary;
 
-namespace UnitTestUltimateTemperatureLibrary
+namespace UltimateTemperatureLibrary.UnitTests
 {
     public class ConvertorTests
     {

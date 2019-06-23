@@ -1,7 +1,40 @@
-﻿namespace UltimateTemperatureLibrary
+﻿using System;
+using UltimateTemperatureLibrary.Interfaces;
+
+namespace UltimateTemperatureLibrary
 {
-    public class Rømer : TemperatureUnit
+    public class Rømer : TemperatureUnit, IConversionToKelvin
     {
+        public Rømer(double value)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Rømer()
+        {
+            Value = Constants.AbsoluteZeroInRømer;
+        }
+
+        public sealed override double Value
+        {
+            get => base.Value;
+            set
+            {
+                if (value < Constants.AbsoluteZeroInCelsius)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rømer scale range.");
+                }
+
+                base.Value = value;
+            }
+        }
+
+
+        public override string[] RegexPatterns { get; protected set; } =
+        {
+            "Rø", "rø", "Ro", "ro", "Rømer", "rømer", "Romer" ,"romer"
+        };
+
         public Celsius ToCelsius()
         {
             throw new System.NotImplementedException();

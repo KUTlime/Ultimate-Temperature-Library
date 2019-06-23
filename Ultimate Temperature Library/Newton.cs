@@ -1,7 +1,36 @@
-﻿namespace UltimateTemperatureLibrary
+﻿using System;
+using UltimateTemperatureLibrary.Interfaces;
+
+namespace UltimateTemperatureLibrary
 {
-    public class Newton : TemperatureUnit
+    public class Newton : TemperatureUnit, IConversionToKelvin
     {
+        public Newton(double value)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Newton()
+        {
+            Value = Constants.AbsoluteZeroInNewton;
+        }
+
+        public sealed override double Value
+        {
+            get => base.Value;
+            set
+            {
+                if (value < Constants.AbsoluteZeroInNewton)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Newton scale range.");
+                }
+
+                base.Value = value;
+            }
+        }
+
+        public override string[] RegexPatterns { get; protected set; } = { "N", "Newton", "n", "newton" };
+
         public Celsius ToCelsius()
         {
             throw new System.NotImplementedException();
