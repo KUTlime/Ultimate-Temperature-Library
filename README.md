@@ -1,5 +1,5 @@
-# Ultimate-Temperature-Library
-The ultimate temperature library for .NET! All what do you need for interaction with temperature in .NET platform.
+# Ultimate Temperature Library
+> The ultimate temperature library for .NET! One ruled them all! 
 
 CURRENTY IN DEVELOPMENT.
 
