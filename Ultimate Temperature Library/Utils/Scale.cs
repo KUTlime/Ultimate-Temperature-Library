@@ -80,7 +80,8 @@ namespace UltimateTemperatureLibrary.Utils
             {
                 string matchPatter = GetRegexPattern(unit);
 
-                return (Regex.Match(Regex.Match(scale, @"(\d)(\D*)$").Value, matchPatter).Success || Regex.Match(scale, matchPatter).Success);
+                return (Regex.Match(Regex.Match(scale, @"(\D*)$").Value, matchPatter).Success ||
+                        Regex.Match(scale, matchPatter).Success);
 
             }
 
