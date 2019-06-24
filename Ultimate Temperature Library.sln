@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary", "Ultimate Temperature Library\UltimateTemperatureLibrary.csproj", "{8D03FB4E-3E0C-4107-AA8D-FC5E0514ADE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary", "UltimateTemperatureLibrary\UltimateTemperatureLibrary.csproj", "{8D03FB4E-3E0C-4107-AA8D-FC5E0514ADE9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary.UnitTests", "UnitTestUltimateTemperatureLibrary\UltimateTemperatureLibrary.UnitTests.csproj", "{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary.UnitTests", "UltimateTemperatureLibrary.UnitTests\UltimateTemperatureLibrary.UnitTests.csproj", "{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
