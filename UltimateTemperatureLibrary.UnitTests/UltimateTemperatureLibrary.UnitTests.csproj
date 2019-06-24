@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ultimate Temperature Library\UltimateTemperatureLibrary.csproj" />
+    <ProjectReference Include="..\UltimateTemperatureLibrary\UltimateTemperatureLibrary.csproj" />
   </ItemGroup>
 
 </Project>
