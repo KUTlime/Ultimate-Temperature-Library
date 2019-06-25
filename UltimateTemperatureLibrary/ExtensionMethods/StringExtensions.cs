@@ -7,8 +7,8 @@ namespace UltimateTemperatureLibrary.ExtensionMethods
     {
         public static string RemoveAllWhitespaces(this string input)
         {
-            return new string(input.ToCharArray()
-                .Where(c => !Char.IsWhiteSpace(c))
+            return new string(input?.ToCharArray()
+                ?.Where(c => !Char.IsWhiteSpace(c))
                 .ToArray());
         }
     }
