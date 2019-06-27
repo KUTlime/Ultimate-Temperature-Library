@@ -186,5 +186,33 @@ namespace UltimateTemperatureLibrary.UnitTests
 
 
         }
+
+        [TestClass]
+        public class CelsiusAddOperatorTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusAddCelsiusFromCelsiusTest()
+            {
+                double temp1 = 20;
+                double temp2 = 30;
+                var celsius = new Celsius(temp1);
+                var celsius2 = new Celsius(temp2);
+
+                Assert.AreEqual(expected: new Celsius(temp1 + temp2), (celsius + celsius2));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusAddCelsiusFromFromTest()
+            {
+                double temp1 = 20;
+                double temp2 = 30;
+                var celsius = new Celsius(temp1);
+                var celsius2 = new Celsius(temp2);
+
+                Assert.AreEqual(celsius.Value + celsius2.Value, new Celsius(temp1 + temp2).Value);
+            }
+        }
     }
 }
