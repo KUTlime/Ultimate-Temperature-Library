@@ -37,11 +37,11 @@ namespace UltimateTemperatureLibrary.UnitTests
 
             [TestCategory(TestCategory.BasicTests)]
             [DataTestMethod]
-            [DataRow(-273.15, 0.0, DisplayName = "Lower Reference Temperature")]
-            [DataRow(-373.15, 100.0, DisplayName = "Upper Reference Temperature")]
-            [DataRow(0.0, Constants.AbsoluteZeroInCelsius, DisplayName = "Absolute zero")]
-            [DataRow(1000, 1000, DisplayName = "Some big value ")]
-            public void DoubleConstructorTests(double expectedValue, double inputValue)
+            [DataRow((UInt32)1, 0.0, 0.0, DisplayName = "Lower Reference Temperature")]
+            [DataRow((UInt32)2, 100, 100.0, DisplayName = "Upper Reference Temperature")]
+            [DataRow((UInt32)3, -273.15, Constants.AbsoluteZeroInCelsius, DisplayName = "Absolute zero")]
+            [DataRow((UInt32)4, 1000, 1000, DisplayName = "Some big value ")]
+            public void DoubleConstructorTests(UInt32 testNumber, double expectedValue, double inputValue)
             {
                 var celsius = new Celsius(inputValue);
 
@@ -188,7 +188,7 @@ namespace UltimateTemperatureLibrary.UnitTests
         }
 
         [TestClass]
-        public class CelsiusAddOperatorTests
+        public class CelsiusAdditionOperatorTests
         {
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
@@ -212,6 +212,34 @@ namespace UltimateTemperatureLibrary.UnitTests
                 var celsius2 = new Celsius(temp2);
 
                 Assert.AreEqual(celsius.Value + celsius2.Value, new Celsius(temp1 + temp2).Value);
+            }
+        }
+
+        [TestClass]
+        public class CelsiusSubtractionOperatorTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusSubtractionCelsiusFromCelsiusTest()
+            {
+                double temp1 = 20;
+                double temp2 = 30;
+                var celsius = new Celsius(temp1);
+                var celsius2 = new Celsius(temp2);
+
+                Assert.AreEqual(expected: new Celsius(temp1 - temp2), celsius - celsius2);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusSubtractionCelsiusFromFromTest()
+            {
+                double temp1 = 20;
+                double temp2 = 30;
+                var celsius = new Celsius(temp1);
+                var celsius2 = new Celsius(temp2);
+
+                Assert.AreEqual(celsius.Value - celsius2.Value, new Celsius(temp1 - temp2).Value);
             }
         }
     }
