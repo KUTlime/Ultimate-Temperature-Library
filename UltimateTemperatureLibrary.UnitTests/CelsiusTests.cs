@@ -199,7 +199,7 @@ namespace UltimateTemperatureLibrary.UnitTests
                 var celsius = new Celsius(temp1);
                 var celsius2 = new Celsius(temp2);
 
-                Assert.AreEqual(expected: new Celsius(temp1 + temp2), (celsius + celsius2));
+                Assert.AreEqual(expected: new Celsius(temp1 + temp2), celsius + celsius2);
             }
 
             [TestCategory(TestCategory.BasicTests)]

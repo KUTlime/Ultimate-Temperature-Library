@@ -24,7 +24,12 @@ namespace UltimateTemperatureLibrary
         /// <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
-            return Value.Equals(obj);
+            if (obj is TemperatureUnit unit)
+            {
+                return Value.Equals(unit.Value);
+            }
+
+            return false;
         }
 
         /// <summary>
