@@ -48,15 +48,15 @@ namespace UltimateTemperatureLibrary
         public virtual Double Value { get; set; }
 
         /// <summary>
-        /// Returns a temperature value in Kelvins.
+        /// Gets or sets Regex patterns which are used for unit parsing from string.
         /// </summary>
-        /// <returns>A temp value in Kelvins.</returns>
-        /// <remarks>On internal use in operators.</remarks>
-        protected abstract Double GetValueInKelvin();
-
         public virtual string[] RegexPatterns { get; protected set; } = { };
 
-        public virtual string RegexPatterRaw { get; protected set; } = String.Empty;
+        /// <summary>
+        /// Gets or sets an user Regex pattern which are used for unit parsing from string.
+        /// <para>This overrides the RegexPatterns property.</para>
+        /// </summary>
+        public virtual string RegexPatternRaw { get; protected set; } = String.Empty;
 
         #region Static methods
 

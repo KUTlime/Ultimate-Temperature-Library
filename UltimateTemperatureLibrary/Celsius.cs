@@ -26,7 +26,7 @@ namespace UltimateTemperatureLibrary
         /// <param name="celsius">An object that can be converted to the Celsius unit.</param>
         public Celsius(IConversionToCelsius celsius)
         {
-            Value = celsius?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin;
+            Value = celsius?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInCelsius;
         }
 
         /// <summary>
@@ -166,78 +166,78 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in Kelvin.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in Kelvin.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Kelvin ToKelvin(double value)
         {
-            return new Kelvin(Converter.Cel2Kel(new Celsius(value).Value));
+            return new Kelvin(Converter.Cel2Kel(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Fahrenheit.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in [°] Fahrenheit.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Fahrenheit ToFahrenheit(double value)
         {
-            return new Fahrenheit(Converter.Cel2Fah(new Celsius(value).Value));
+            return new Fahrenheit(Converter.Cel2Fah(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Rankine.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in [°] Rankine.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Rankine ToRankine(double value)
         {
-            return new Rankine(Converter.Cel2Ran(new Celsius(value).Value));
+            return new Rankine(Converter.Cel2Ran(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Delisle.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in [°] Delisle.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Delisle ToDelisle(double value)
         {
-            return new Delisle(Converter.Cel2Del(new Celsius(value).Value));
+            return new Delisle(Converter.Cel2Del(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Newton.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in [°] Newton.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Newton ToNewton(double value)
         {
-            return new Newton(Converter.Cel2New(new Celsius(value).Value));
+            return new Newton(Converter.Cel2New(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Réaumur.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in [°] Réaumur.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Réaumur ToRéaumur(double value)
         {
-            return new Réaumur(Converter.Cel2Réau(new Celsius(value).Value));
+            return new Réaumur(Converter.Cel2Réau(value));
         }
 
         /// <summary>
         /// Returns an entry temperature in [°] Rømer.
         /// </summary>
-        /// <param name="value">An input double value of [°] Celsius.</param>
+        /// <param name="value">An input double value in [°] Celsius.</param>
         /// <returns>A value in Rømer.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Rømer ToRømer(double value)
         {
-            return new Rømer(Converter.Cel2Røm(new Celsius(value).Value));
+            return new Rømer(Converter.Cel2Røm(value));
         }
 
         public static new Celsius ToCelsius(IConversionToCelsius celsius)

@@ -73,7 +73,7 @@ namespace UltimateTemperatureLibrary.Utils
 
             string GetRegexPattern(TemperatureUnit unit)
             {
-                return unit.RegexPatterRaw == String.Empty ? "\\b" + String.Join("\\b|\\b", unit.RegexPatterns) + "\\b" : unit.RegexPatterRaw;
+                return unit.RegexPatternRaw == String.Empty ? "\\b" + String.Join("\\b|\\b", unit.RegexPatterns) + "\\b" : unit.RegexPatternRaw;
             }
 
             bool TryMatchUnit(TemperatureUnit unit)

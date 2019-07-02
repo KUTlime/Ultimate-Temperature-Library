@@ -3,7 +3,7 @@ using UltimateTemperatureLibrary.Interfaces;
 
 namespace UltimateTemperatureLibrary
 {
-    public class Kelvin : TemperatureUnit, IConversionToKelvin
+    public class Kelvin : TemperatureUnit, IConversionToKelvin, IConversionToCelsius
     {
         public Kelvin()
         {
@@ -31,7 +31,7 @@ namespace UltimateTemperatureLibrary
             Value = value;
         }
 
-        protected override double GetValueInKelvin()
+        public Kelvin(IConversionToKelvin temperature)
         {
             throw new NotImplementedException();
         }
@@ -39,6 +39,11 @@ namespace UltimateTemperatureLibrary
         public Kelvin ToKelvin()
         {
             return this;
+        }
+
+        public Celsius ToCelsius()
+        {
+            return new Celsius(Converter.Kel2Cel(Value));
         }
     }
 }

@@ -32,7 +32,7 @@ namespace UltimateTemperatureLibrary
             throw new NotImplementedException();
         }
 
-        protected override double GetValueInKelvin()
+        public Fahrenheit(IConversionToFahrenheit temperature)
         {
             throw new NotImplementedException();
         }

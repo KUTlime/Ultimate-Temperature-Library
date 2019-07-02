@@ -15,6 +15,11 @@ namespace UltimateTemperatureLibrary
             Value = Constants.AbsoluteZeroInRømer;
         }
 
+        public Rømer(IConversionToRømer temperature)
+        {
+            throw new NotImplementedException();
+        }
+
         public sealed override double Value
         {
             get => base.Value;
@@ -71,11 +76,6 @@ namespace UltimateTemperatureLibrary
         }
 
         public Rømer ToRømer()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override double GetValueInKelvin()
         {
             throw new System.NotImplementedException();
         }

@@ -15,6 +15,11 @@ namespace UltimateTemperatureLibrary
             Value = Constants.AbsoluteZeroInDelisle;
         }
 
+        public Delisle(IConversionToDelisle temperature)
+        {
+            throw new NotImplementedException();
+        }
+
         public sealed override double Value
         {
             get => base.Value;
@@ -67,11 +72,6 @@ namespace UltimateTemperatureLibrary
         }
 
         public Rømer ToRømer()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override double GetValueInKelvin()
         {
             throw new System.NotImplementedException();
         }
