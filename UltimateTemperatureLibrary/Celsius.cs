@@ -23,7 +23,7 @@ namespace UltimateTemperatureLibrary
         /// Initializes a new instance of Celsius class using by shared interface.
         /// <para>Value is set to Absolute zero if null object is passed into constructor.</para>
         /// </summary>
-        /// <param name="celsius">An unit object transformable to the Celsius scale.</param>
+        /// <param name="celsius">An object that can be converted to the Celsius unit.</param>
         public Celsius(IConversionToCelsius celsius)
         {
             Value = celsius?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin;
@@ -49,14 +49,14 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Initializes a new instance of Celsius class using a double value.
         /// </summary>
-        /// <param name="value">An initialization value in the Celsius scale.</param>
+        /// <param name="value">An initialization value from the Celsius scale.</param>
         public Celsius(double value)
         {
             Value = value;
         }
 
         /// <summary>
-        /// Gets a temperature value in the Celsius scale.
+        /// Gets a temperature value from the Celsius scale.
         /// </summary>
         public sealed override double Value
         {
@@ -77,15 +77,6 @@ namespace UltimateTemperatureLibrary
         /// </summary>
         public override string[] RegexPatterns { get; protected set; } = { "C", "Cel", "Celsius", "celsius" };
 
-        /// <summary>
-        /// Return stored temperature value in the Kelvin scale.
-        /// </summary>
-        /// <returns>A stored Celsius value transformed to Kelvin.</returns>
-        protected override double GetValueInKelvin()
-        {
-            return Converter.Cel2Kel(Value);
-        }
-
         #region Interface implementation
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
-        /// Returns the stored temperature in Celsius, aka itself.
+        /// Returns the stored temperature in [°] Celsius, aka itself.
         /// </summary>
-        /// <returns>A value in Celsius (a reference to itself).</returns>
+        /// <returns>A value in [°] Celsius (a reference to itself).</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         /// <remarks>Interface is implemented because of +/- implementation.</remarks>
         public Celsius ToCelsius()
@@ -175,6 +166,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in Kelvin.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in Kelvin.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Kelvin ToKelvin(double value)
@@ -185,6 +177,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Fahrenheit.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in [°] Fahrenheit.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Fahrenheit ToFahrenheit(double value)
@@ -195,6 +188,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Rankine.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in [°] Rankine.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Rankine ToRankine(double value)
@@ -205,6 +199,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Delisle.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in [°] Delisle.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Delisle ToDelisle(double value)
@@ -215,6 +210,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Newton.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in [°] Newton.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Newton ToNewton(double value)
@@ -225,6 +221,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Réaumur.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in [°] Réaumur.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Réaumur ToRéaumur(double value)
@@ -235,6 +232,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Returns an entry temperature in [°] Rømer.
         /// </summary>
+        /// <param name="value">An input double value of [°] Celsius.</param>
         /// <returns>A value in Rømer.</returns>
         /// <remarks>Use .Value property to get double value.</remarks>
         public static Rømer ToRømer(double value)
@@ -242,74 +240,13 @@ namespace UltimateTemperatureLibrary
             return new Rømer(Converter.Cel2Røm(new Celsius(value).Value));
         }
 
-        /// <summary>
-        /// Returns an entry temperature in Kelvin.
-        /// </summary>
-        /// <returns>A value in Kelvin.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Kelvin ToKelvin(IConversionToKelvin temp)
+        public static new Celsius ToCelsius(IConversionToCelsius celsius)
         {
-            return new Kelvin((temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Fahrenheit.
-        /// </summary>
-        /// <returns>A value in [°] Fahrenheit.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Fahrenheit ToFahrenheit(IConversionToKelvin temp)
-        {
-            return new Fahrenheit(Converter.Kel2Fah(temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Rankine.
-        /// </summary>
-        /// <returns>A value in [°] Rankine.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Rankine ToRankine(IConversionToKelvin temp)
-        {
-            return new Rankine(Converter.Kel2Ran(temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Delisle.
-        /// </summary>
-        /// <returns>A value in [°] Delisle.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Delisle ToDelisle(IConversionToKelvin temp)
-        {
-            return new Delisle(Converter.Kel2Del(temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Newton.
-        /// </summary>
-        /// <returns>A value in [°] Newton.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Newton ToNewton(IConversionToKelvin temp)
-        {
-            return new Newton(Converter.Kel2New(temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Réaumur.
-        /// </summary>
-        /// <returns>A value in [°] Réaumur.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Réaumur ToRéaumur(IConversionToKelvin temp)
-        {
-            return new Réaumur(Converter.Kel2Réau(temp.ToKelvin().Value));
-        }
-
-        /// <summary>
-        /// Returns an entry temperature in [°] Rømer.
-        /// </summary>
-        /// <returns>A value in Rømer.</returns>
-        /// <remarks>Use .Value property to get IConversionToKelvin temp.</remarks>
-        public static Rømer ToRømer(IConversionToKelvin temp)
-        {
-            return new Rømer(Converter.Kel2Røm(temp.ToKelvin().Value));
+            if (celsius is Celsius validCelsius)
+            {
+                return validCelsius;
+            }
+            return new Celsius(celsius);
         }
 
         #endregion
@@ -324,7 +261,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator +(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInCelsius));
+            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin));
         }
 
         /// <summary>
@@ -335,7 +272,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator -(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInCelsius));
+            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin));
         }
 
         #endregion
