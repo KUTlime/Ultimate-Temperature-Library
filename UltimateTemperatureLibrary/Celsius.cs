@@ -175,6 +175,21 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
+        /// Returns an entry temperature in [°] Celsius.
+        /// </summary>
+        /// <param name="celsius">An input temperature object that can be converter to the Celsius unit.</param>
+        /// <returns>A value in [°] Celsius.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static new Celsius ToCelsius(IConversionToCelsius celsius)
+        {
+            if (celsius is Celsius validCelsius)
+            {
+                return validCelsius;
+            }
+            return new Celsius(celsius);
+        }
+
+        /// <summary>
         /// Returns an entry temperature in [°] Fahrenheit.
         /// </summary>
         /// <param name="value">An input double value in [°] Celsius.</param>
@@ -240,15 +255,6 @@ namespace UltimateTemperatureLibrary
             return new Rømer(Converter.Cel2Røm(value));
         }
 
-        public static new Celsius ToCelsius(IConversionToCelsius celsius)
-        {
-            if (celsius is Celsius validCelsius)
-            {
-                return validCelsius;
-            }
-            return new Celsius(celsius);
-        }
-
         #endregion
 
         #region Operators
@@ -261,7 +267,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator +(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin));
+            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToCelsius()?.Value ?? 0.0));
         }
 
         /// <summary>
@@ -272,7 +278,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator -(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToCelsius()?.Value ?? Constants.AbsoluteZeroInKelvin));
+            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToCelsius()?.Value ?? 0.0));
         }
 
         #endregion

@@ -229,7 +229,7 @@ namespace UltimateTemperatureLibrary.UnitTests
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
-            public void CelsiusAddCelsiusFromFromTest()
+            public void CelsiusAddCelsiusFromValuesTest()
             {
                 double temp1 = 20;
                 double temp2 = 30;
@@ -237,6 +237,16 @@ namespace UltimateTemperatureLibrary.UnitTests
                 var celsius2 = new Celsius(temp2);
 
                 Assert.AreEqual(celsius.Value + celsius2.Value, new Celsius(temp1 + temp2).Value);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusAddNullTest()
+            {
+                double temp1 = 20;
+                var celsius = new Celsius(temp1);
+
+                Assert.AreEqual(celsius.Value, (celsius + null).Value);
             }
         }
 
