@@ -65,7 +65,13 @@ namespace UltimateTemperatureLibrary
             {
                 if (value < Constants.AbsoluteZeroInRéaumur)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Réaumur scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInRéaumur) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Réaumur scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInRéaumur;
+                    return;
                 }
 
                 base.Value = value;

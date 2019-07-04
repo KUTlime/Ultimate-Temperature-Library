@@ -16,7 +16,7 @@ namespace UltimateTemperatureLibrary
         /// </summary>
         public Rømer()
         {
-            Value = Constants.AbsoluteZeroInCelsius;
+            Value = Constants.AbsoluteZeroInRømer;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace UltimateTemperatureLibrary
         /// <param name="rømer">An object that can be converted to the Rømer unit.</param>
         public Rømer(IConversionToRømer rømer)
         {
-            Value = rømer?.ToRømer()?.Value ?? Constants.AbsoluteZeroInCelsius;
+            Value = rømer?.ToRømer()?.Value ?? Constants.AbsoluteZeroInRømer;
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace UltimateTemperatureLibrary
         {
             if (value == null || String.IsNullOrWhiteSpace(value))
             {
-                Value = Constants.AbsoluteZeroInCelsius;
+                Value = Constants.AbsoluteZeroInRømer;
                 return;
             }
 
@@ -63,9 +63,15 @@ namespace UltimateTemperatureLibrary
             get => base.Value;
             set
             {
-                if (value < Constants.AbsoluteZeroInCelsius)
+                if (value < Constants.AbsoluteZeroInRømer)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rømer scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInRømer) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rømer scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInRømer;
+                    return;
                 }
 
                 base.Value = value;
@@ -268,7 +274,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Rømer and any another temperature scale unit.</returns>
         public static Rømer operator +(Rømer rømer, IConversionToRømer b)
         {
-            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToRømer()?.Value ?? 0.0));
+            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInRømer) + (b?.ToRømer()?.Value ?? 0.0));
         }
 
         /// <summary>
@@ -279,7 +285,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Rømer and any another temperature scale unit.</returns>
         public static Rømer operator -(Rømer rømer, IConversionToRømer b)
         {
-            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToRømer()?.Value ?? 0.0));
+            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInRømer) - (b?.ToRømer()?.Value ?? 0.0));
         }
 
         #endregion

@@ -63,9 +63,15 @@ namespace UltimateTemperatureLibrary
             get => base.Value;
             set
             {
-                if (value < Constants.AbsoluteZeroInDelisle)
+                if (value > Constants.AbsoluteZeroInDelisle)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Delisle scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInDelisle) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Delisle scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInDelisle;
+                    return;
                 }
 
                 base.Value = value;

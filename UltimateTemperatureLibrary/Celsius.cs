@@ -65,7 +65,13 @@ namespace UltimateTemperatureLibrary
             {
                 if (value < Constants.AbsoluteZeroInCelsius)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Celsius scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInCelsius) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Celsius scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInCelsius;
+                    return;
                 }
 
                 base.Value = value;

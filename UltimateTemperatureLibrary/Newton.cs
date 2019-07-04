@@ -65,7 +65,13 @@ namespace UltimateTemperatureLibrary
             {
                 if (value < Constants.AbsoluteZeroInNewton)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Newton scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInNewton) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Newton scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInNewton;
+                    return;
                 }
 
                 base.Value = value;

@@ -15,7 +15,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An internal double value in form of string.</returns>
         public override string ToString()
         {
-            return Value.ToString();
+            return $"{Value.ToString()} °{RegexPatterns[0]}";
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets or sets Regex patterns which are used for unit parsing from string.
         /// </summary>
-        public virtual string[] RegexPatterns { get; protected set; } = { };
+        public virtual string[] RegexPatterns { get; protected set; } = { String.Empty };
 
         /// <summary>
         /// Gets or sets an user Regex pattern which are used for unit parsing from string.

@@ -292,36 +292,82 @@ namespace UltimateTemperatureLibrary.UnitTests
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
-            public void FromDoubleToCelsiusTest()
+            public void FromDoubleToKelvinTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInKelvin, new Celsius(Constants.BoilingPointH2OInCelsius).ToKelvin());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInKelvin, new Celsius(Constants.AbsoluteZeroInCelsius).ToKelvin().Value);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInKelvin, new Celsius(Constants.MeltingPointH2OInCelsius).ToKelvin().Value);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInKelvin, new Celsius(Constants.BoilingPointH2OInCelsius).ToKelvin().Value);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void ValidKelvinPassedTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                var kelvin = new Kelvin(Constants.AbsoluteZeroInKelvin);
+                var fahrenheit = new Fahrenheit(Constants.AbsoluteZeroInFahrenheit);
+                var rankine = new Rankine(Constants.AbsoluteZeroInRankine);
+                var delisle = new Delisle(Constants.AbsoluteZeroInDelisle);
+                var newton = new Newton(Constants.AbsoluteZeroInNewton);
+                var réaumur = new Réaumur(Constants.AbsoluteZeroInRéaumur);
+                var rømer = new Rømer(Constants.AbsoluteZeroInRømer);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(kelvin).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(celsius).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(fahrenheit).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(rankine).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(delisle).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(newton).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(réaumur).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(rømer).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToKelvinAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInKelvin, Celsius.ToKelvin(Constants.AbsoluteZeroInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToKelvinMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInKelvin, Celsius.ToKelvin(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInKelvin, Celsius.ToKelvin(Constants.MeltingPointH2OInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToKelvinBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInKelvin, Celsius.ToKelvin(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInKelvin, Celsius.ToKelvin(Constants.BoilingPointH2OInCelsius).Value);
             }
         }
 
         [TestClass]
         public class ToCelsiusTests
         {
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void ValidCelsiusPassedTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                var kelvin = new Kelvin(Constants.AbsoluteZeroInKelvin);
+                var fahrenheit = new Fahrenheit(Constants.AbsoluteZeroInFahrenheit);
+                var rankine = new Rankine(Constants.AbsoluteZeroInRankine);
+                var delisle = new Delisle(Constants.AbsoluteZeroInDelisle);
+                var newton = new Newton(Constants.AbsoluteZeroInNewton);
+                var réaumur = new Réaumur(Constants.AbsoluteZeroInRéaumur);
+                var rømer = new Rømer(Constants.AbsoluteZeroInRømer);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(kelvin).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(celsius).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(fahrenheit).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(rankine).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(delisle).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(newton).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(réaumur).Value);
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, Celsius.ToCelsius(rømer).Value);
+            }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
@@ -361,28 +407,30 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToFahrenheitTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInFahrenheit, new Celsius(Constants.BoilingPointH2OInCelsius).ToFahrenheit());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInFahrenheit, new Celsius(Constants.AbsoluteZeroInCelsius).ToFahrenheit().Value);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInFahrenheit, new Celsius(Constants.MeltingPointH2OInCelsius).ToFahrenheit().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInFahrenheit, new Celsius(Constants.BoilingPointH2OInCelsius).ToFahrenheit().Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToFahrenheitAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInFahrenheit, Celsius.ToFahrenheit(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInFahrenheit, Celsius.ToFahrenheit(Constants.AbsoluteZeroInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToFahrenheitMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInFahrenheit, Celsius.ToFahrenheit(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInFahrenheit, Celsius.ToFahrenheit(Constants.MeltingPointH2OInCelsius).Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToFahrenheitBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInFahrenheit, Celsius.ToFahrenheit(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInFahrenheit, Celsius.ToFahrenheit(Constants.BoilingPointH2OInCelsius).Value, 1e-13);
             }
         }
 
@@ -402,28 +450,30 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToRankineTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRankine, new Celsius(Constants.BoilingPointH2OInCelsius).ToRankine());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRankine, new Celsius(Constants.AbsoluteZeroInCelsius).ToRankine().Value);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRankine, new Celsius(Constants.MeltingPointH2OInCelsius).ToRankine().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRankine, new Celsius(Constants.BoilingPointH2OInCelsius).ToRankine().Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRankineAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInRankine, Celsius.ToRankine(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRankine, Celsius.ToRankine(Constants.AbsoluteZeroInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRankineMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInRankine, Celsius.ToRankine(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRankine, Celsius.ToRankine(Constants.MeltingPointH2OInCelsius).Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRankineBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRankine, Celsius.ToRankine(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRankine, Celsius.ToRankine(Constants.BoilingPointH2OInCelsius).Value);
             }
         }
 
@@ -443,28 +493,30 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToDelisleTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInDelisle, new Celsius(Constants.BoilingPointH2OInCelsius).ToDelisle());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInDelisle, new Celsius(Constants.AbsoluteZeroInCelsius).ToDelisle().Value, 1e-12);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInDelisle, new Celsius(Constants.MeltingPointH2OInCelsius).ToDelisle().Value, 1e-12);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInDelisle, new Celsius(Constants.BoilingPointH2OInCelsius).ToDelisle().Value, 1e-12);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToDelisleAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInDelisle, Celsius.ToDelisle(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInDelisle, Celsius.ToDelisle(Constants.AbsoluteZeroInCelsius).Value, 1e-12);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToDelisleMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInDelisle, Celsius.ToDelisle(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInDelisle, Celsius.ToDelisle(Constants.MeltingPointH2OInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToDelisleBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInDelisle, Celsius.ToDelisle(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInDelisle, Celsius.ToDelisle(Constants.BoilingPointH2OInCelsius).Value);
             }
         }
 
@@ -484,28 +536,30 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToNewtonTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInNewton, new Celsius(Constants.BoilingPointH2OInCelsius).ToNewton());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInNewton, new Celsius(Constants.AbsoluteZeroInCelsius).ToNewton().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInNewton, new Celsius(Constants.MeltingPointH2OInCelsius).ToNewton().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInNewton, new Celsius(Constants.BoilingPointH2OInCelsius).ToNewton().Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToNewtonAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInNewton, Celsius.ToNewton(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInNewton, Celsius.ToNewton(Constants.AbsoluteZeroInCelsius).Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToNewtonMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInNewton, Celsius.ToNewton(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInNewton, Celsius.ToNewton(Constants.MeltingPointH2OInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToNewtonBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInNewton, Celsius.ToNewton(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInNewton, Celsius.ToNewton(Constants.BoilingPointH2OInCelsius).Value);
             }
         }
 
@@ -525,28 +579,30 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToRéaumurTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRéaumur, new Celsius(Constants.BoilingPointH2OInCelsius).ToRéaumur());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRéaumur, new Celsius(Constants.AbsoluteZeroInCelsius).ToRéaumur().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRéaumur, new Celsius(Constants.MeltingPointH2OInCelsius).ToRéaumur().Value, 1e-13);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRéaumur, new Celsius(Constants.BoilingPointH2OInCelsius).ToRéaumur().Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRéaumurAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInRéaumur, Celsius.ToRéaumur(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRéaumur, Celsius.ToRéaumur(Constants.AbsoluteZeroInCelsius).Value, 1e-13);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRéaumurMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInRéaumur, Celsius.ToRéaumur(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRéaumur, Celsius.ToRéaumur(Constants.MeltingPointH2OInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRéaumurBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRéaumur, Celsius.ToRéaumur(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRéaumur, Celsius.ToRéaumur(Constants.BoilingPointH2OInCelsius).Value);
             }
         }
 
@@ -566,28 +622,44 @@ namespace UltimateTemperatureLibrary.UnitTests
             [TestMethod]
             public void FromDoubleToRømerTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRømer, new Celsius(Constants.BoilingPointH2OInCelsius).ToRømer());
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRømer, new Celsius(Constants.AbsoluteZeroInCelsius).ToRømer().Value);
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRømer, new Celsius(Constants.MeltingPointH2OInCelsius).ToRømer().Value);
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRømer, new Celsius(Constants.BoilingPointH2OInCelsius).ToRømer().Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRømerAbsoluteZeroTest()
             {
-                Assert.AreEqual(expected: Constants.AbsoluteZeroInRømer, Celsius.ToRømer(Constants.AbsoluteZeroInCelsius));
+                Assert.AreEqual(expected: Constants.AbsoluteZeroInRømer, Celsius.ToRømer(Constants.AbsoluteZeroInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRømerMeltingPointTest()
             {
-                Assert.AreEqual(expected: Constants.MeltingPointH2OInRømer, Celsius.ToRømer(Constants.MeltingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.MeltingPointH2OInRømer, Celsius.ToRømer(Constants.MeltingPointH2OInCelsius).Value);
             }
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
             public void StaticFromDoubleToRømerBoilingPointTest()
             {
-                Assert.AreEqual(expected: Constants.BoilingPointH2OInRømer, Celsius.ToRømer(Constants.BoilingPointH2OInCelsius));
+                Assert.AreEqual(expected: Constants.BoilingPointH2OInRømer, Celsius.ToRømer(Constants.BoilingPointH2OInCelsius).Value);
+            }
+        }
+
+        [TestClass]
+        public class RegexPatternsTests : Celsius
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void SetupNewUnitsTest()
+            {
+                var celsius = new RegexPatternsTests { RegexPatterns = new[] { "C" } };
+                // Alternative would be protected internal setter.
+
+                Assert.AreEqual(celsius.RegexPatterns[0], "C");
             }
         }
     }

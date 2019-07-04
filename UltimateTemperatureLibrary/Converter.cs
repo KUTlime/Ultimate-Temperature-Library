@@ -1,4 +1,7 @@
-﻿namespace UltimateTemperatureLibrary
+﻿using System;
+using UltimateTemperatureLibrary.Utils;
+
+namespace UltimateTemperatureLibrary
 {
     /// <summary>
     /// Provides a complex double-to-double conversion between all temperature units.
@@ -82,6 +85,10 @@
         /// <returns>A value in Kelvin.</returns>
         public static double Fah2Kel(double value)
         {
+            if (Math.Abs(value) < OperationOverDoublePrecision.HighPrecision)
+            {
+                value = 0.0;
+            }
             return (value - Constants.AbsoluteZeroInFahrenheit) * 5.0 / 9.0;
         }
 
@@ -162,7 +169,13 @@
         /// <returns>A value in Fahrenheit.</returns>
         public static double Kel2Fah(double value)
         {
-            return value * 1.8 + Constants.AbsoluteZeroInFahrenheit;
+            // To eliminate numerical error accumulation.
+            if (Math.Abs(value) > OperationOverDoublePrecision.HighPrecision)
+            {
+                return value * 1.8 + Constants.AbsoluteZeroInFahrenheit;
+            }
+
+            return Constants.AbsoluteZeroInFahrenheit;
         }
 
         /// <summary>
@@ -172,6 +185,10 @@
         /// <returns>A value in Rankine.</returns>
         public static double Kel2Ran(double value)
         {
+            if (Math.Abs(value) < OperationOverDoublePrecision.HighPrecision)
+            {
+                return 0;
+            }
             return value * 1.8;
         }
 
@@ -183,6 +200,11 @@
         /// <seealso cref="https://en.wikipedia.org/wiki/Delisle_scale"/>
         public static double Kel2Del(double value)
         {
+            // To eliminate numerical error accumulation.
+            if (Math.Abs(value) < OperationOverDoublePrecision.HighPrecision)
+            {
+                return Constants.AbsoluteZeroInDelisle;
+            }
             return (Constants.BoilingPointH2OInKelvin - value) * 1.5;
         }
 
@@ -193,7 +215,7 @@
         /// <returns>A value in Newton.</returns>
         public static double Kel2New(double value)
         {
-            return (value - Constants.MeltingPointH2OInKelvin) * 33.0 / 100.0;
+            return (value - Constants.MeltingPointH2OInKelvin) * 0.33;
         }
 
         /// <summary>
@@ -203,6 +225,10 @@
         /// <returns>A value in Réaumur.</returns>
         public static double Kel2Réau(double value)
         {
+            if (Math.Abs(value) < OperationOverDoublePrecision.HighPrecision)
+            {
+                return Constants.AbsoluteZeroInRéaumur;
+            }
             return (value - Constants.MeltingPointH2OInKelvin) * 0.8;
         }
 
@@ -213,7 +239,7 @@
         /// <returns>A value in Rømer.</returns>
         public static double Kel2Røm(double value)
         {
-            return (value - Constants.MeltingPointH2OInKelvin) * 21.0 / 40.0 + 7.5;
+            return (value - Constants.MeltingPointH2OInKelvin) * 0.525 + 7.5;
         }
 
         /// <summary>

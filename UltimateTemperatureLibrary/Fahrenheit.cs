@@ -63,9 +63,15 @@ namespace UltimateTemperatureLibrary
             get => base.Value;
             set
             {
-                if (value < Constants.AbsoluteZeroInCelsius)
+                if (value < Constants.AbsoluteZeroInFahrenheit)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Fahrenheit scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInFahrenheit) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Fahrenheit scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInFahrenheit;
+                    return;
                 }
 
                 base.Value = value;

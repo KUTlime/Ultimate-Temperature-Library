@@ -65,7 +65,13 @@ namespace UltimateTemperatureLibrary
             {
                 if (value < Constants.AbsoluteZeroInRankine)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rankine scale range.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInRankine) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rankine scale range.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInRankine;
+                    return;
                 }
 
                 base.Value = value;

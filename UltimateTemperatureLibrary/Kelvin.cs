@@ -65,7 +65,13 @@ namespace UltimateTemperatureLibrary
             {
                 if (value < Constants.AbsoluteZeroInKelvin)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), value, "Kelvin can't be less than zero. Absolute zero = 0 K.");
+                    if (!(Math.Abs(value - Constants.AbsoluteZeroInKelvin) < OperationOverDoublePrecision.HighPrecision))
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Kelvin can't be less than zero. Absolute zero = 0 K.");
+                    }
+
+                    base.Value = Constants.AbsoluteZeroInKelvin;
+                    return;
                 }
 
                 base.Value = value;
@@ -76,6 +82,11 @@ namespace UltimateTemperatureLibrary
         /// Gets an array of the Kelvin unit identifications for a in-string scale matching.
         /// </summary>
         public override string[] RegexPatterns { get; protected set; } = { "K", "Kel", "Kelvin", "k", "kel", "kelvine" };
+
+        public override string ToString()
+        {
+            return $"{Value} {RegexPatterns[0]}";
+        }
 
         #region Interface implementation
 
