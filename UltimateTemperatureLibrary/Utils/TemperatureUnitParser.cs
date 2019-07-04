@@ -59,5 +59,10 @@ namespace UltimateTemperatureLibrary.Utils
                     throw new ArgumentOutOfRangeException(nameof(unit), unit, "An invalid Scale value. Perhaps missing case?");
             }
         }
+
+        public string Test()
+        {
+            return "";
+        }
     }
 }

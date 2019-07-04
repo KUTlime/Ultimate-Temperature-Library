@@ -1,10 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using UltimateTemperatureLibrary.Enums;
 using UltimateTemperatureLibrary.Utils;
 
-namespace UltimateTemperatureLibrary.UnitTests
+namespace UltimateTemperatureLibrary.UnitTests.Utils
 {
+    [TestClass]
     public class ScaleTests
     {
         [TestClass]
