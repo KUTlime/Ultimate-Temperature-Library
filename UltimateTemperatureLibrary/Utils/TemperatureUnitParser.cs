@@ -30,8 +30,8 @@ namespace UltimateTemperatureLibrary.Utils
             }
 
             // Now, the heavy lifting...
-            if (!Double.TryParse(Regex.Match(value, @"([-\d.]+)").Value, NumberStyles.Float, CultureInfo.InvariantCulture, out tempValue) &&
-                !Double.TryParse(Regex.Match(value, @"[-\d.]+[eE][-+]?\d+").Value, NumberStyles.Float, CultureInfo.InvariantCulture, out tempValue))
+            if (!Double.TryParse(Regex.Match(value, @"[-\d.]+[eE][-+]?\d+").Value, NumberStyles.Float, CultureInfo.InvariantCulture, out tempValue) &&
+                !Double.TryParse(Regex.Match(value, @"([-\d.]+)").Value, NumberStyles.Float, CultureInfo.InvariantCulture, out tempValue))
             {
                 throw new FormatException("Input string has invalid numeric value.");
             }
