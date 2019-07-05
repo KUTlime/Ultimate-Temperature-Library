@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Celsius unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "C", "Cel", "Celsius", "celsius" };
+        public override string[] RegexPatterns { get; protected set; } = { "C", "Cel", "CEL", "cel", "Celsius", "celsius", "CELSIUS" };
 
         #region Interface implementation
 

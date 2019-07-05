@@ -60,7 +60,7 @@ namespace UltimateTemperatureLibrary.Utils
             #region Réaumur identification
             if (TryMatchUnit(new Réaumur()))
             {
-                return TemperatureScale.Delisle;
+                return TemperatureScale.Réaumur;
             }
             #endregion
 

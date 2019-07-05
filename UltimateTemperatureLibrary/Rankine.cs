@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Rankine unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "R", "Ra", "Ran", "Rankine", "r", "ra", "ran", "rankine" };
+        public override string[] RegexPatterns { get; protected set; } = { "R", "Ra", "Ran", "Rankine", "ra", "ran", "rankine", "RANKINE" };
 
         #region Interface implementation
 

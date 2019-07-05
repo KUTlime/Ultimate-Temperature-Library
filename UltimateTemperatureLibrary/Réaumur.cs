@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Réaumur unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "Re", "Ré", "re", "ré", "Réau", "Reau", "Réaumur", "Reaumur", "réaumur", "reaumur" };
+        public override string[] RegexPatterns { get; protected set; } = { "Re", "Ré", "re", "ré", "Réau", "Reau", "réau", "reau", "RÉAU", "REAU", "Réaumur", "Reaumur", "réaumur", "reaumur", "RÉAUMUR", "REAUMUR" };
 
         #region Interface implementation
 

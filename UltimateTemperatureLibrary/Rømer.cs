@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Rømer unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "C", "Cel", "Rømer", "rømer" };
+        public override string[] RegexPatterns { get; protected set; } = { "Rø", "rø", "RØ", "Rømer", "rømer", "RØMER" };
 
         #region Interface implementation
 

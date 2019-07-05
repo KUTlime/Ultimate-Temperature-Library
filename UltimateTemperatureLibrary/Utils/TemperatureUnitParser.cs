@@ -18,7 +18,7 @@ namespace UltimateTemperatureLibrary.Utils
             }
 
             value = value.Replace(',', '.');
-            if (value.Contains(","))
+            if ((value.Length - value.Replace(".", "").Length) > 1)
             {
                 throw new FormatException("Input string has more than one comma.");
             }
@@ -58,11 +58,6 @@ namespace UltimateTemperatureLibrary.Utils
                 default:
                     throw new ArgumentOutOfRangeException(nameof(unit), unit, "An invalid Scale value. Perhaps missing case?");
             }
-        }
-
-        public string Test()
-        {
-            return "";
         }
     }
 }
