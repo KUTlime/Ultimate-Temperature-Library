@@ -6,7 +6,7 @@ namespace UltimateTemperatureLibrary
     /// <summary>
     /// Provides a shared functionality for all temperature units.
     /// </summary>
-    public abstract class TemperatureUnit
+    public abstract class TemperatureUnit : IEquatable<TemperatureUnit>
     {
 
         /// <summary>
@@ -25,12 +25,46 @@ namespace UltimateTemperatureLibrary
         /// <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
-            if (obj is TemperatureUnit unit)
+            switch (obj)
             {
-                return Value.Equals(unit.Value);
+                case null:
+                    return false;
+                case TemperatureUnit temp when ReferenceEquals(this, obj):
+                    return true;
+                case TemperatureUnit unit:
+                    return Equals((IConversionToKelvin)this, (IConversionToKelvin)unit);
+                default:
+                    return false;
             }
+        }
 
-            return false;
+
+        public bool Equals(TemperatureUnit other)
+        {
+            switch (other)
+            {
+                case null:
+                    return false;
+                case TemperatureUnit temp when ReferenceEquals(this, other):
+                    return true;
+                default:
+                    return Equals((IConversionToKelvin)this, (IConversionToKelvin)other);
+            }
+        }
+
+        public static bool Equals(IConversionToKelvin left, IConversionToKelvin right)
+        {
+            return Equals(left.ToKelvin().Value, right.ToKelvin().Value);
+        }
+
+        public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
+        {
+            return Equals((IConversionToKelvin)left, (IConversionToKelvin)right);
+        }
+
+        public static bool operator !=(TemperatureUnit left, TemperatureUnit right)
+        {
+            return !Equals((IConversionToKelvin)left, (IConversionToKelvin)right);
         }
 
         /// <summary>
@@ -150,5 +184,6 @@ namespace UltimateTemperatureLibrary
 
 
         #endregion
+
     }
 }

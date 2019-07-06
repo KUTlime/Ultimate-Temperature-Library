@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UltimateTemperatureLibrary.Interfaces;
 using UltimateTemperatureLibrary.Utils;
 
 namespace UltimateTemperatureLibrary.UnitTests
@@ -564,6 +565,111 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInRømer, TemperatureUnit.ToRømer(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInRømer, TemperatureUnit.ToRømer(rømer).Value);
             }
+        }
+
+        [TestClass]
+        public class EqualityTests
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void OneCelsiusEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                Assert.AreEqual(true, celsius.Equals(celsius));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void TwoCelsiusEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                var celsius2 = new Celsius(Constants.AbsoluteZeroInCelsius);
+                Assert.AreEqual(true, celsius.Equals(celsius2));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void TwoCelsiusWithSameTemperatureEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                var celsius2 = new Celsius(Constants.AbsoluteZeroInCelsius);
+                Assert.AreEqual(true, celsius == celsius2);
+                Assert.AreEqual(false, celsius != celsius2);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void NullEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                Assert.AreEqual(false, celsius.Equals(null));
+                Assert.AreEqual(false, celsius.Equals((object)null));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusWithKelvinEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                var kelvin = new Kelvin(Constants.AbsoluteZeroInKelvin);
+                Assert.AreEqual(true, celsius.Equals(kelvin));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusWithUnitEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                IConversionToKelvin kelvin = new Kelvin(Constants.AbsoluteZeroInKelvin);
+                Assert.AreEqual(true, celsius.Equals(kelvin));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void CelsiusWithSameRefferenceAsUnitEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                IConversionToKelvin kelvin = celsius;
+                Assert.AreEqual(true, celsius.Equals(kelvin));
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void UnitWithSomeNonUnitObjEqualityTest()
+            {
+                var celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
+                Assert.AreEqual(false, celsius.Equals(new object()));
+            }
+        }
+
+        [TestClass]
+        public class ToStringTests : TemperatureUnit
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void BaseTostringTest()
+            {
+                double someTemperature = 20;
+                var unit = new ToStringTests() { Value = someTemperature };
+                Assert.AreEqual($"{someTemperature} °", unit.ToString());
+            }
+
+
+        }
+
+        [TestClass]
+        public class GetHashCodeTests : TemperatureUnit
+        {
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void BaseGetHashCodeTest()
+            {
+                double someTemperature = 20;
+                var unit = new ToStringTests() { Value = someTemperature };
+                Assert.AreEqual(someTemperature.GetHashCode(), unit.GetHashCode());
+            }
+
+
         }
     }
 }
