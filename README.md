@@ -15,6 +15,7 @@ The Ultimate Temperature Library brings complex funcionality when working with t
 - Flexible parsing from string
 - Double2Double convertor 
 - Thermophysical constants
+- Accuracy at least to 12 decimal places, 13 decimal places mostly.
 
 
 # Use
@@ -86,6 +87,7 @@ Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is 
 
 ## Interface implementation
 Every single temperature scale unit implements IConversionToUNIT, where UNIT stands for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer, to be able to convert and compare with any another unit.
+
 
 
 # FAQ
