@@ -4,7 +4,7 @@
 CURRENTY IN DEVELOPMENT.
 
 # Introduction
-The Ultimate Temperature Library brings complex funcionality when working with temperatures to .NET world. Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer in one library!
+The Ultimate Temperature Library brings complex functionality when working with temperatures to .NET world. Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer in one library!
 
 
 # Main features
@@ -22,14 +22,14 @@ The Ultimate Temperature Library brings complex funcionality when working with t
 ```csharp
 // Unit constructions
 var celsius = new Celsius(); // Absolute zero is used when an empty unit constructor is called.
-celsius = new Celsius(20.0);  // Double value intepreted as 20 °C.
+celsius = new Celsius(20.0);  // Double value interpreted as 20 °C.
 celsius = new Celsius(Constants.MeltingPointH2OInCelsius); // A thermo-physical constant used as double.
 celsius = new Celsius("50.8 °C");  // String parsing with some Celsius scale value and unit...
 celsius = new Celsius("-273.15 K"); // ...or any another unit that is transferred appropriately.
 var celsius1 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin)); // Directly from other unit.
 var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin); // Same applies to other unit ctors.
 
-// Aritmethics (T2 = T1 +/- ΔT)
+// Arithmetics(T2 = T1 +/- ΔT)
 var celsius3 = celsius + celsius1;  // Same unit...
 var celsius4 = celsius + kelvin;    // ...or any unit with any another unit.
 celsius3 = celsius - celsius1;      // Same for subtraction...
@@ -98,7 +98,7 @@ If you add two temperatures, the second temperature unit is interpreted as ΔT a
 If you subtract two temperatures, you will receive the temperature difference in the corresponding unit.
 
 ## ToString override
-Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is denoted as [K]. This PrimaryUnitID is stored in `RegexPatterns` property and its override override also ToString() behaviour.
+Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is denoted as [K]. This PrimaryUnitID is stored in `RegexPatterns` property and its override also ToString() behaviour.
 
 ## Interface implementation
 Every single temperature scale unit implements IConversionToUNIT, where UNIT stands for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer, to be able to convert and compare with any another unit.
@@ -109,8 +109,8 @@ Every single temperature scale unit implements IConversionToUNIT, where UNIT sta
 ## Why no Addition/Subtraction with integers/double?
 ```csharp
 // Consider following code:
-var celsius = new Celsius(20); // Totally OK. We interpreting 20 as potential Celsius temperature value.
-var celsius_result = celsius +  celsius; // Still OK. Type safety in place.
+var celsius = new Celsius(20); // Totally OK. We're interpreting 20 as potential Celsius temperature value.
+var celsius_result = celsius + celsius; // Still OK. Type safety in place.
 celsius_result = celsius + 20; // Not OK. High possibility of human error. Is 20 really 20 °C?
 
 // Use following construction instead:
@@ -135,7 +135,7 @@ If no unit is present in string with valid float number, **Kelvin unit** is used
 ø is Latin Small Letter O with Stroke, see Links. You can type it as ALT+0216 for lowercase ø and ALT+0248 for the uppercase Ø but it depends on your OS character setup. See [this](http://www.fileformat.info/tip/microsoft/enter_unicode.htm) or [this](https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0)
 
 ## Why only addition and subtraction between units is implemented?
-Multiplication/division doesn't really make any physical sense with temperature as .
+Multiplication/division doesn't really make any physical sense with temperature as an intensity quantity.
 
 
 # Links
