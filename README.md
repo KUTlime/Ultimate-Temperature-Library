@@ -107,7 +107,7 @@ Every single temperature scale unit implements IConversionToUNIT, where UNIT sta
 
 # FAQ
 ## Why no Addition/Subtraction with integers/double?
-```
+```csharp
 // Consider following code:
 var celsius = new Celsius(20); // Totally OK. We interpreting 20 as potential Celsius temperature value.
 var celsius_result = celsius +  celsius; // Still OK. Type safety in place.
