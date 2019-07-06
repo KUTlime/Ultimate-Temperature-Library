@@ -133,5 +133,5 @@ Multiplication/division doesn't really make any physical sense with temperature 
 [Newton scale Wikipedia](https://en.wikipedia.org/wiki/Newton_scale)<br>
 [Réaumur scale Wikipedia](https://en.wikipedia.org/wiki/R%C3%A9aumur_scale)<br>
 [Rømer scale Wikipedia](https://en.wikipedia.org/wiki/R%C3%B8mer_scale)<br>
-[Latin Small Letter O with Stroke](https://unicode-table.com/en/00F8/)
-[Latin Capital Letter O with Stroke](https://unicode-table.com/en/00D8/)
+[Latin Small Letter O with Stroke](https://unicode-table.com/en/00F8/)<br>
+[Latin Capital Letter O with Stroke](https://unicode-table.com/en/00D8/)<br>
