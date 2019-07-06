@@ -41,14 +41,14 @@ celsius3 += celsius4;  // Compound operators are also provided...
 celsius3 -= celsius4;  // ... same for subtraction.
 
 // Double-to-double conversion
-double someTemperatureValueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine);
+double someValueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine);
 
 // OOP Conversion
 var fahrenheit = new Fahrenheit(celsius.ToFahrenheit()); // From an instance.
 celsius = Celsius.ToCelsius(fahrenheit);                 // Static conversion.
 
 // Extraction of converted double
-double newValueInCelsius = Fahrenheit.ToCelsius(someTemperatureValueInFahrenheit).Value; // Static conversion to double.
+double newValueInCelsius = Fahrenheit.ToCelsius(someValueInFahrenheit).Value; // Static conversion to double.
 
 // Comparison
 celsius3.Value = 20;
