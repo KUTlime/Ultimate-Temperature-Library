@@ -47,9 +47,13 @@ double valueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine)
 var fahrenheit = new Fahrenheit(celsius.ToFahrenheit()); // From an instance.
 celsius = Celsius.ToCelsius(fahrenheit);                 // Static conversion.
 
-// Extraction of converted double
-var delisle = new Delisle();
-double newValueInCelsius = Delisle.ToCelsius(delisle.Value).Value; // Static conversion to double.
+// Extraction of converted temperature as double
+var delisle = new Delisle().
+double value = delisle.Value;  // Absolute zero in Delisle is returned.
+
+// Static conversion from a Rømer value as double to a Celsius instance and double extraction
+var rømer = new Rømer();
+double cel = Rømer.ToCelsius(rømer.Value).Value; 
 
 // Comparison
 celsius3.Value = 20;
