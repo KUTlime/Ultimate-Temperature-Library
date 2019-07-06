@@ -10,8 +10,8 @@ The Ultimate Temperature Library brings complex funcionality when working with t
 # Main features
 - Implements **all** temperature scales
 - .NET Standard 1.0 (multiplatform use)
-- Well tested (+10000 UT)
-- OOP approach (type safety with manipulation)
+- Well tested (+10000 UTs)
+- OOP approach (type safety when manipulation is in place)
 - Flexible parsing from string
 - Double2Double convertor 
 - Thermophysical constants
@@ -29,7 +29,7 @@ celsius = new Celsius("-273.15 K"); // ...or any another unit that is transferre
 var celsius1 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin)); // Directly from other unit.
 var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin); // Same applies to other unit ctors.
 
-// Aritmethics
+// Aritmethics (T2 = T1 +/- ΔT)
 var celsius3 = celsius + celsius1;  // Same unit...
 var celsius4 = celsius + kelvin;    // ...or any unit with any another unit.
 celsius3 = celsius - celsius1;      // Same for subtraction...
@@ -81,6 +81,21 @@ celsius.Value = -500; // Throws an exception.
 
 
 # Notes
+
+## Addition/Subtraction and temperature difference (ΔT) implementation
+Temperature is the intensive quantity. A mixture of two objects or substances with same temperatures result in a mixture with same temperature, ergo it doesn’t make any sense to add two temperatures. Same applies to subtraction of two object with same temperature or two temperature itself.
+
+![equation](https://latex.codecogs.com/gif.latex?\forall&space;\left&space;(&space;T_1&space;=&space;T_2&space;\right&space;):&space;T_1&space;=&space;T_1&space;&plus;&space;T_2&space;\Leftrightarrow&space;T_2&space;=&space;T_1&space;&plus;&space;T_2)
+
+On the other hand, it makes sense to add/subtract the temperature and the temperature difference.
+
+![equation](https://latex.codecogs.com/gif.latex?T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\par&space;\Delta&space;T&space;=&space;T_2&space;-&space;T_1)
+
+If you add two temperatures, the second temperature unit is interpreted as ΔT and it is added to the first temperature. If the second temperature is negative, the magnitude of the second temperature is subtracted from the first temperature.
+
+![equation](https://latex.codecogs.com/gif.latex?\forall&space;\left&space;(\Delta&space;T&space;>&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;>&space;T_1&space;\par&space;\forall&space;\left&space;(\Delta&space;T&space;<&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;<&space;T_1)
+
+If you subtract two temperatures, you will receive the temperature difference in the corresponding unit.
 
 ## ToString override
 Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is denoted as [K]. This PrimaryUnitID is stored in `RegexPatterns` property and its override override also ToString() behaviour.
