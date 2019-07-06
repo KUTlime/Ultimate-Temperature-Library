@@ -48,7 +48,8 @@ var fahrenheit = new Fahrenheit(celsius.ToFahrenheit()); // From an instance.
 celsius = Celsius.ToCelsius(fahrenheit);                 // Static conversion.
 
 // Extraction of converted double
-double newValueInCelsius = Fahrenheit.ToCelsius(valueInFahrenheit).Value; // Static conversion to double.
+var delisle = new Delisle();
+double newValueInCelsius = Delisle.ToCelsius(delisle.Value).Value; // Static conversion to double.
 
 // Comparison
 celsius3.Value = 20;
