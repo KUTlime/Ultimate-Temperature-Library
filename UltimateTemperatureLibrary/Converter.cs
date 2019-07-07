@@ -197,7 +197,6 @@ namespace UltimateTemperatureLibrary
         /// </summary>
         /// <param name="value">A value in Kelvin.</param>
         /// <returns>A value in Delisle.</returns>
-        /// <seealso cref="https://en.wikipedia.org/wiki/Delisle_scale"/>
         public static double Kel2Del(double value)
         {
             // To eliminate numerical error accumulation.
