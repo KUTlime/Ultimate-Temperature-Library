@@ -1,8 +1,6 @@
 # Ultimate Temperature Library
 > The ultimate temperature library for .NET! One library to rule them all! 
 
-CURRENTY IN DEVELOPMENT.
-
 # Introduction
 The Ultimate Temperature Library brings complex functionality when working with temperatures to .NET world. Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer in one library!
 
@@ -16,6 +14,7 @@ The Ultimate Temperature Library brings complex functionality when working with 
 - Double2Double convertor 
 - Thermophysical constants
 - Accuracy at least to 12 decimal places, 13 decimal places mostly.
+- Well documented.
 
 
 # Use
@@ -102,7 +101,6 @@ Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is 
 
 ## Interface implementation
 Every single temperature scale unit implements IConversionToUNIT, where UNIT stands for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer, to be able to convert and compare with any another unit.
-
 
 
 # FAQ
