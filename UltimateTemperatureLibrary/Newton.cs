@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Newton unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "N", "Newton", "newton", "NEWTON" };
+        protected internal override string[] RegexPatterns { get; set; } = { "N", "Newton", "newton", "NEWTON" };
 
         #region Interface implementation
 

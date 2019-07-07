@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Fahrenheit unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "F", "Fahrenheit", "Fah", "fahrenheit", "fah", "FAHRENHEIT" };
+        protected internal override string[] RegexPatterns { get; set; } = { "F", "Fahrenheit", "Fah", "fahrenheit", "fah", "FAHRENHEIT" };
 
         #region Interface implementation
 

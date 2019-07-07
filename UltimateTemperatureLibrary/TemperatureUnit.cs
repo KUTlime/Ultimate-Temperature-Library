@@ -107,13 +107,13 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets or sets Regex patterns which are used for unit parsing from string.
         /// </summary>
-        public virtual string[] RegexPatterns { get; protected set; } = { String.Empty };
+        protected internal virtual string[] RegexPatterns { get; set; } = { String.Empty };
 
         /// <summary>
         /// Gets or sets an user Regex pattern which are used for unit parsing from string.
         /// <para>This overrides the RegexPatterns property.</para>
         /// </summary>
-        public virtual string RegexPatternRaw { get; protected set; } = String.Empty;
+        protected internal virtual string RegexPatternRaw { get; set; } = String.Empty;
 
         #region Static methods
 

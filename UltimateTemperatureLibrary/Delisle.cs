@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Delisle unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "D", "De", "Delisle", "DELISLE", "delisle" };
+        protected internal override string[] RegexPatterns { get; set; } = { "D", "De", "Delisle", "DELISLE", "delisle" };
 
         #region Interface implementation
 

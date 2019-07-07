@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Kelvin unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN" };
+        protected internal override string[] RegexPatterns { get; set; } = { "K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN" };
 
         /// <summary>
         /// Return stored temperature value with unit identification.
