@@ -5,9 +5,24 @@
     <RootNamespace>UltimateTemperatureLibrary</RootNamespace>
     <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer</PackageTags>
+    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer</PackageTags>
     <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.</Description>
     <LangVersion>latest</LangVersion>
+    <Authors>Radek Zahradník, Ph.D.</Authors>
+    <Copyright>GPL v3</Copyright>
+    <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.html</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <Product>Ultimate Temperature Library</Product>
+    <PackageReleaseNotes>Icon by: http://pngimg.com/download/77546</PackageReleaseNotes>
+    <PackageIconUrl>http://pngimg.com/uploads/thermometer/thermometer_PNG28.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\radek\source\repos\Ultimate Temperature Library\UltimateTemperatureLibrary\UltimateTemperatureLibrary.xml</DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
 </Project>

@@ -43,7 +43,7 @@ namespace UltimateTemperatureLibrary
                 return;
             }
 
-            Value = Converter.Kel2Cel(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
+            Value = Converter.Kel2Réau(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
         }
 
         /// <summary>
@@ -273,7 +273,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Réaumur and any another temperature scale unit.</returns>
         public static Réaumur operator +(Réaumur réaumur, IConversionToRéaumur b)
         {
-            return new Réaumur((réaumur?.Value ?? Constants.AbsoluteZeroInRéaumur) + (b?.ToRéaumur()?.Value ?? 0.0));
+            return new Réaumur(
+                    (réaumur?.Value ?? Constants.AbsoluteZeroInRéaumur) +
+                    (b?.ToRéaumur()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -284,7 +287,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Réaumur and any another temperature scale unit.</returns>
         public static Réaumur operator -(Réaumur réaumur, IConversionToRéaumur b)
         {
-            return new Réaumur((réaumur?.Value ?? Constants.AbsoluteZeroInRéaumur) - (b?.ToRéaumur()?.Value ?? 0.0));
+            return new Réaumur(
+                    (réaumur?.Value ?? Constants.AbsoluteZeroInRéaumur) -
+                    (b?.ToRéaumur()?.Value ?? 0.0)
+            );
         }
 
         #endregion

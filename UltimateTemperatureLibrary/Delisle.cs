@@ -43,7 +43,7 @@ namespace UltimateTemperatureLibrary
                 return;
             }
 
-            Value = Converter.Kel2Cel(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
+            Value = Converter.Kel2Del(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
         }
 
         /// <summary>
@@ -273,7 +273,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Delisle and any another temperature scale unit.</returns>
         public static Delisle operator +(Delisle delisle, IConversionToDelisle b)
         {
-            return new Delisle((delisle?.Value ?? Constants.AbsoluteZeroInDelisle) + (b?.ToDelisle()?.Value ?? 0.0));
+            return new Delisle(
+                    (delisle?.Value ?? Constants.AbsoluteZeroInDelisle) +
+                    (b?.ToDelisle()?.Value ?? 0.0)
+            );
         }
 
         /// <summary>
@@ -284,7 +287,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Delisle and any another temperature scale unit.</returns>
         public static Delisle operator -(Delisle delisle, IConversionToDelisle b)
         {
-            return new Delisle((delisle?.Value ?? Constants.AbsoluteZeroInDelisle) - (b?.ToDelisle()?.Value ?? 0.0));
+            return new Delisle(
+                    (delisle?.Value ?? Constants.AbsoluteZeroInDelisle) +
+                    (b?.ToDelisle()?.Value ?? 0.0)
+            );
         }
 
         #endregion

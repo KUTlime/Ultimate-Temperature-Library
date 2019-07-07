@@ -530,7 +530,8 @@ namespace UltimateTemperatureLibrary
         /// <returns>A value in Kelvin.</returns>
         public static double Røm2Kel(double value)
         {
-            return (value - 7.5) * 40.0 / 21.0 + Constants.MeltingPointH2OInKelvin;
+            return (1.9047619047619047619047619048 * value) + 258.86428571428571428571428571;
+            //return (value - 7.5) * 1.9047619047619047619047619048 + Constants.MeltingPointH2OInKelvin;
         }
 
         /// <summary>

@@ -43,7 +43,7 @@ namespace UltimateTemperatureLibrary
                 return;
             }
 
-            Value = Converter.Kel2Cel(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
+            Value = Converter.Kel2Røm(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace UltimateTemperatureLibrary
         /// <summary>
         /// Gets an array of the Rømer unit identifications for a in-string scale matching.
         /// </summary>
-        public override string[] RegexPatterns { get; protected set; } = { "Rø", "rø", "RØ", "Rømer", "rømer", "RØMER" };
+        public override string[] RegexPatterns { get; protected set; } = { "Rø", "rø", "RØ", "Rømer", "rømer", "RØMER", "Ro", "ro", "Ro", "Romer", "romer", "ROMER" };
 
         #region Interface implementation
 
@@ -274,7 +274,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Rømer and any another temperature scale unit.</returns>
         public static Rømer operator +(Rømer rømer, IConversionToRømer b)
         {
-            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInRømer) + (b?.ToRømer()?.Value ?? 0.0));
+            return new Rømer(
+                    (rømer?.Value ?? Constants.AbsoluteZeroInRømer) +
+                    (b?.ToRømer()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -285,7 +288,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Rømer and any another temperature scale unit.</returns>
         public static Rømer operator -(Rømer rømer, IConversionToRømer b)
         {
-            return new Rømer((rømer?.Value ?? Constants.AbsoluteZeroInRømer) - (b?.ToRømer()?.Value ?? 0.0));
+            return new Rømer(
+                    (rømer?.Value ?? Constants.AbsoluteZeroInRømer) -
+                    (b?.ToRømer()?.Value ?? 0.0)
+            );
         }
 
         #endregion

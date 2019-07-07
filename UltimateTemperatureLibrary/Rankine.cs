@@ -43,7 +43,7 @@ namespace UltimateTemperatureLibrary
                 return;
             }
 
-            Value = Converter.Kel2Cel(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
+            Value = Converter.Kel2Ran(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace UltimateTemperatureLibrary
                 {
                     if (!(Math.Abs(value - Constants.AbsoluteZeroInRankine) < OperationOverDoublePrecision.HighPrecision))
                     {
-                        throw new ArgumentOutOfRangeException(nameof(value), value, "Input value is below the Rankine scale range.");
+                        throw new ArgumentOutOfRangeException(nameof(value), value, "Rankine can't be less than zero. Absolute zero = 0 R.");
                     }
 
                     base.Value = Constants.AbsoluteZeroInRankine;
@@ -273,7 +273,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Rankine and any another temperature scale unit.</returns>
         public static Rankine operator +(Rankine rankine, IConversionToRankine b)
         {
-            return new Rankine((rankine?.Value ?? Constants.AbsoluteZeroInRankine) + (b?.ToRankine()?.Value ?? 0.0));
+            return new Rankine(
+                    (rankine?.Value ?? Constants.AbsoluteZeroInRankine) +
+                    (b?.ToRankine()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -284,7 +287,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Rankine and any another temperature scale unit.</returns>
         public static Rankine operator -(Rankine rankine, IConversionToRankine b)
         {
-            return new Rankine((rankine?.Value ?? Constants.AbsoluteZeroInRankine) - (b?.ToRankine()?.Value ?? 0.0));
+            return new Rankine(
+                    (rankine?.Value ?? Constants.AbsoluteZeroInRankine) -
+                    (b?.ToRankine()?.Value ?? 0.0)
+            );
         }
 
         #endregion

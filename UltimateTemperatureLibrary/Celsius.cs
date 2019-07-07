@@ -273,7 +273,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator +(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) + (b?.ToCelsius()?.Value ?? 0.0));
+            return new Celsius(
+                    (celsius?.Value ?? Constants.AbsoluteZeroInCelsius) +
+                    (b?.ToCelsius()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -284,7 +287,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Celsius and any another temperature scale unit.</returns>
         public static Celsius operator -(Celsius celsius, IConversionToCelsius b)
         {
-            return new Celsius((celsius?.Value ?? Constants.AbsoluteZeroInCelsius) - (b?.ToCelsius()?.Value ?? 0.0));
+            return new Celsius(
+                    (celsius?.Value ?? Constants.AbsoluteZeroInCelsius) -
+                    (b?.ToCelsius()?.Value ?? 0.0)
+            );
         }
 
         #endregion

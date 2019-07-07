@@ -75,6 +75,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInKelvin, TemperatureUnit.ToKelvin(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInKelvin, TemperatureUnit.ToKelvin(rømer).Value);
             }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Kelvin("0 K"), TemperatureUnit.ToKelvin("0 K"));
+                Assert.AreEqual(new Kelvin("0 °C"), TemperatureUnit.ToKelvin("0 °C"));
+                Assert.AreEqual(new Kelvin("0 °F"), TemperatureUnit.ToKelvin("0 °F"));
+                Assert.AreEqual(new Kelvin("0 °R"), TemperatureUnit.ToKelvin("0 °R"));
+                Assert.AreEqual(new Kelvin("0 °D"), TemperatureUnit.ToKelvin("0 °D"));
+                Assert.AreEqual(new Kelvin("0 °N"), TemperatureUnit.ToKelvin("0 °N"));
+                Assert.AreEqual(new Kelvin("0 °Ré"), TemperatureUnit.ToKelvin("0 °Ré"));
+                Assert.AreEqual(new Kelvin("0 °Rø"), TemperatureUnit.ToKelvin("0 °Rø"));
+            }
         }
 
         [TestClass]
@@ -144,6 +158,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInCelsius, TemperatureUnit.ToCelsius(newton).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInCelsius, TemperatureUnit.ToCelsius(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInCelsius, TemperatureUnit.ToCelsius(rømer).Value);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Celsius("0 K"), TemperatureUnit.ToCelsius("0 K"));
+                Assert.AreEqual(new Celsius("0 °C"), TemperatureUnit.ToCelsius("0 °C"));
+                Assert.AreEqual(new Celsius("0 °F"), TemperatureUnit.ToCelsius("0 °F"));
+                Assert.AreEqual(new Celsius("0 °R"), TemperatureUnit.ToCelsius("0 °R"));
+                Assert.AreEqual(new Celsius("0 °D"), TemperatureUnit.ToCelsius("0 °D"));
+                Assert.AreEqual(new Celsius("0 °N"), TemperatureUnit.ToCelsius("0 °N"));
+                Assert.AreEqual(new Celsius("0 °Ré"), TemperatureUnit.ToCelsius("0 °Ré"));
+                Assert.AreEqual(new Celsius("0 °Rø"), TemperatureUnit.ToCelsius("0 °Rø"));
             }
         }
 
@@ -215,6 +243,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, TemperatureUnit.ToFahrenheit(réaumur).Value, OperationOverDoublePrecision.HighPrecision);
                 Assert.AreEqual(Constants.BoilingPointH2OInFahrenheit, TemperatureUnit.ToFahrenheit(rømer).Value, OperationOverDoublePrecision.HighPrecision);
             }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Fahrenheit("0 K"), TemperatureUnit.ToFahrenheit("0 K"));
+                Assert.AreEqual(new Fahrenheit("0 °C"), TemperatureUnit.ToFahrenheit("0 °C"));
+                Assert.AreEqual(new Fahrenheit("0 °F"), TemperatureUnit.ToFahrenheit("0 °F"));
+                Assert.AreEqual(new Fahrenheit("0 °R"), TemperatureUnit.ToFahrenheit("0 °R"));
+                Assert.AreEqual(new Fahrenheit("0 °D"), TemperatureUnit.ToFahrenheit("0 °D"));
+                Assert.AreEqual(new Fahrenheit("0 °N"), TemperatureUnit.ToFahrenheit("0 °N"));
+                Assert.AreEqual(new Fahrenheit("0 °Ré"), TemperatureUnit.ToFahrenheit("0 °Ré"));
+                Assert.AreEqual(new Fahrenheit("0 °Rø"), TemperatureUnit.ToFahrenheit("0 °Rø"));
+            }
         }
 
         [TestClass]
@@ -284,6 +326,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInRankine, TemperatureUnit.ToRankine(newton).Value, OperationOverDoublePrecision.HighPrecision);
                 Assert.AreEqual(Constants.BoilingPointH2OInRankine, TemperatureUnit.ToRankine(réaumur).Value, OperationOverDoublePrecision.HighPrecision);
                 Assert.AreEqual(Constants.BoilingPointH2OInRankine, TemperatureUnit.ToRankine(rømer).Value, OperationOverDoublePrecision.HighPrecision);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Rankine("0 K"), TemperatureUnit.ToRankine("0 K"));
+                Assert.AreEqual(new Rankine("0 °C"), TemperatureUnit.ToRankine("0 °C"));
+                Assert.AreEqual(new Rankine("0 °F"), TemperatureUnit.ToRankine("0 °F"));
+                Assert.AreEqual(new Rankine("0 °R"), TemperatureUnit.ToRankine("0 °R"));
+                Assert.AreEqual(new Rankine("0 °D"), TemperatureUnit.ToRankine("0 °D"));
+                Assert.AreEqual(new Rankine("0 °N"), TemperatureUnit.ToRankine("0 °N"));
+                Assert.AreEqual(new Rankine("0 °Ré"), TemperatureUnit.ToRankine("0 °Ré"));
+                Assert.AreEqual(new Rankine("0 °Rø"), TemperatureUnit.ToRankine("0 °Rø"));
             }
         }
 
@@ -355,6 +411,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInDelisle, TemperatureUnit.ToDelisle(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInDelisle, TemperatureUnit.ToDelisle(rømer).Value);
             }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Delisle("0 K"), TemperatureUnit.ToDelisle("0 K"));
+                Assert.AreEqual(new Delisle("0 °C"), TemperatureUnit.ToDelisle("0 °C"));
+                Assert.AreEqual(new Delisle("0 °F"), TemperatureUnit.ToDelisle("0 °F"));
+                Assert.AreEqual(new Delisle("0 °R"), TemperatureUnit.ToDelisle("0 °R"));
+                Assert.AreEqual(new Delisle("0 °D"), TemperatureUnit.ToDelisle("0 °D"));
+                Assert.AreEqual(new Delisle("0 °N"), TemperatureUnit.ToDelisle("0 °N"));
+                Assert.AreEqual(new Delisle("0 °Ré"), TemperatureUnit.ToDelisle("0 °Ré"));
+                Assert.AreEqual(new Delisle("0 °Rø"), TemperatureUnit.ToDelisle("0 °Rø"));
+            }
         }
 
         [TestClass]
@@ -424,6 +494,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInNewton, TemperatureUnit.ToNewton(newton).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInNewton, TemperatureUnit.ToNewton(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInNewton, TemperatureUnit.ToNewton(rømer).Value);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Newton("0 K"), TemperatureUnit.ToNewton("0 K"));
+                Assert.AreEqual(new Newton("0 °C"), TemperatureUnit.ToNewton("0 °C"));
+                Assert.AreEqual(new Newton("0 °F"), TemperatureUnit.ToNewton("0 °F"));
+                Assert.AreEqual(new Newton("0 °R"), TemperatureUnit.ToNewton("0 °R"));
+                Assert.AreEqual(new Newton("0 °D"), TemperatureUnit.ToNewton("0 °D"));
+                Assert.AreEqual(new Newton("0 °N"), TemperatureUnit.ToNewton("0 °N"));
+                Assert.AreEqual(new Newton("0 °Ré"), TemperatureUnit.ToNewton("0 °Ré"));
+                Assert.AreEqual(new Newton("0 °Rø"), TemperatureUnit.ToNewton("0 °Rø"));
             }
         }
 
@@ -495,6 +579,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, TemperatureUnit.ToRéaumur(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInRéaumur, TemperatureUnit.ToRéaumur(rømer).Value);
             }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Réaumur("0 K"), TemperatureUnit.ToRéaumur("0 K"));
+                Assert.AreEqual(new Réaumur("0 °C"), TemperatureUnit.ToRéaumur("0 °C"));
+                Assert.AreEqual(new Réaumur("0 °F"), TemperatureUnit.ToRéaumur("0 °F"));
+                Assert.AreEqual(new Réaumur("0 °R"), TemperatureUnit.ToRéaumur("0 °R"));
+                Assert.AreEqual(new Réaumur("0 °D"), TemperatureUnit.ToRéaumur("0 °D"));
+                Assert.AreEqual(new Réaumur("0 °N"), TemperatureUnit.ToRéaumur("0 °N"));
+                Assert.AreEqual(new Réaumur("0 °Ré"), TemperatureUnit.ToRéaumur("0 °Ré"));
+                Assert.AreEqual(new Réaumur("0 °Rø"), TemperatureUnit.ToRéaumur("0 °Rø"));
+            }
         }
 
         [TestClass]
@@ -564,6 +662,20 @@ namespace UltimateTemperatureLibrary.UnitTests
                 Assert.AreEqual(Constants.BoilingPointH2OInRømer, TemperatureUnit.ToRømer(newton).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInRømer, TemperatureUnit.ToRømer(réaumur).Value);
                 Assert.AreEqual(Constants.BoilingPointH2OInRømer, TemperatureUnit.ToRømer(rømer).Value);
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
+            public void StaticConversionFromStringTest()
+            {
+                Assert.AreEqual(new Rømer("0 K"), TemperatureUnit.ToRømer("0 K"));
+                Assert.AreEqual(new Rømer("0 °C"), TemperatureUnit.ToRømer("0 °C"));
+                Assert.AreEqual(new Rømer("0 °F"), TemperatureUnit.ToRømer("0 °F"));
+                Assert.AreEqual(new Rømer("0 °R"), TemperatureUnit.ToRømer("0 °R"));
+                Assert.AreEqual(new Rømer("0 °D"), TemperatureUnit.ToRømer("0 °D"));
+                Assert.AreEqual(new Rømer("0 °N"), TemperatureUnit.ToRømer("0 °N"));
+                Assert.AreEqual(new Rømer("0 °Ré"), TemperatureUnit.ToRømer("0 °Ré"));
+                Assert.AreEqual(new Rømer("0 °Rø"), TemperatureUnit.ToRømer("0 °Rø"));
             }
         }
 

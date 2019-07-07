@@ -43,7 +43,7 @@ namespace UltimateTemperatureLibrary
                 return;
             }
 
-            Value = Converter.Kel2Cel(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
+            Value = Converter.Kel2New(TemperatureUnitParser.Parse(value)?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin);
         }
 
         /// <summary>
@@ -274,7 +274,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Newton and any another temperature scale unit.</returns>
         public static Newton operator +(Newton newton, IConversionToNewton b)
         {
-            return new Newton((newton?.Value ?? Constants.AbsoluteZeroInNewton) + (b?.ToNewton()?.Value ?? 0.0));
+            return new Newton(
+                    (newton?.Value ?? Constants.AbsoluteZeroInNewton) +
+                    (b?.ToNewton()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -285,7 +288,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Newton and any another temperature scale unit.</returns>
         public static Newton operator -(Newton newton, IConversionToNewton b)
         {
-            return new Newton((newton?.Value ?? Constants.AbsoluteZeroInNewton) - (b?.ToNewton()?.Value ?? 0.0));
+            return new Newton(
+                    (newton?.Value ?? Constants.AbsoluteZeroInNewton) -
+                    (b?.ToNewton()?.Value ?? 0.0)
+            );
         }
 
         #endregion

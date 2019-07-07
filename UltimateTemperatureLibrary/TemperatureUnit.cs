@@ -1,5 +1,6 @@
 ﻿using System;
 using UltimateTemperatureLibrary.Interfaces;
+using UltimateTemperatureLibrary.Utils;
 
 namespace UltimateTemperatureLibrary
 {
@@ -38,7 +39,11 @@ namespace UltimateTemperatureLibrary
             }
         }
 
-
+        /// <summary>
+        /// Determines whether the specified object is equal to the current object.
+        /// </summary>
+        /// <param name="other">The object to compare with the current object.</param>
+        /// <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
         public bool Equals(TemperatureUnit other)
         {
             switch (other)
@@ -52,16 +57,34 @@ namespace UltimateTemperatureLibrary
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool Equals(IConversionToKelvin left, IConversionToKelvin right)
         {
-            return Equals(left.ToKelvin().Value, right.ToKelvin().Value);
+            return Equals(left.ToKelvin().Value, right.ToKelvin().Value) || Math.Abs(left.ToKelvin().Value - right.ToKelvin().Value) < OperationOverDoublePrecision.HighPrecision;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
         {
             return Equals((IConversionToKelvin)left, (IConversionToKelvin)right);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator !=(TemperatureUnit left, TemperatureUnit right)
         {
             return !Equals((IConversionToKelvin)left, (IConversionToKelvin)right);
@@ -106,12 +129,34 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
+        /// Returns an entry temperature in Kelvin.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Kelvin unit.</param>
+        /// <returns>A value in Kelvin.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Kelvin ToKelvin(string temperature)
+        {
+            return new Kelvin(temperature);
+        }
+
+        /// <summary>
         /// Returns an entry temperature in [°] Celsius.
         /// </summary>
         /// <param name="temperature">An input temperature object that can be converter to the Celsius unit.</param>
         /// <returns>A value in Celsius.</returns>
         /// <remarks>Use .Value property to get temperature as double.</remarks>
         public static Celsius ToCelsius(IConversionToCelsius temperature)
+        {
+            return new Celsius(temperature);
+        }
+
+        /// <summary>
+        /// Returns an entry temperature in [°] Celsius.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Celsius unit.</param>
+        /// <returns>A value in Celsius.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Celsius ToCelsius(string temperature)
         {
             return new Celsius(temperature);
         }
@@ -128,12 +173,34 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
+        /// Returns an entry temperature in [°] Fahrenheit.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Fahrenheit unit.</param>
+        /// <returns>A value in [°] Fahrenheit.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Fahrenheit ToFahrenheit(string temperature)
+        {
+            return new Fahrenheit(temperature);
+        }
+
+        /// <summary>
         /// Returns an entry temperature in [°] Rankine.
         /// </summary>
         /// <param name="temperature">An input temperature object that can be converter to the Rankine unit.</param>
         /// <returns>A value in [°] Rankine.</returns>
         /// <remarks>Use .Value property to get temperature as double.</remarks>
         public static Rankine ToRankine(IConversionToRankine temperature)
+        {
+            return new Rankine(temperature);
+        }
+
+        /// <summary>
+        /// Returns an entry temperature in [°] Rankine.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Rankine unit.</param>
+        /// <returns>A value in [°] Rankine.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Rankine ToRankine(string temperature)
         {
             return new Rankine(temperature);
         }
@@ -150,12 +217,34 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
+        /// Returns an entry temperature in [°] Delisle.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Delisle unit.</param>
+        /// <returns>A value in [°] Delisle.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Delisle ToDelisle(string temperature)
+        {
+            return new Delisle(temperature);
+        }
+
+        /// <summary>
         /// Returns an entry temperature in [°] Newton.
         /// </summary>
         /// <param name="temperature">An input temperature object that can be converter to the Newton unit.</param>
         /// <returns>A value in [°] Newton.</returns>
         /// <remarks>Use .Value property to get temperature as double.</remarks>
         public static Newton ToNewton(IConversionToNewton temperature)
+        {
+            return new Newton(temperature);
+        }
+
+        /// <summary>
+        /// Returns an entry temperature in [°] Newton.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Newton unit.</param>
+        /// <returns>A value in [°] Newton.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Newton ToNewton(string temperature)
         {
             return new Newton(temperature);
         }
@@ -172,6 +261,17 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
+        /// Returns an entry temperature in [°] Réaumur.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Réaumur unit.</param>
+        /// <returns>A value in [°] Réaumur.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Réaumur ToRéaumur(string temperature)
+        {
+            return new Réaumur(temperature);
+        }
+
+        /// <summary>
         /// Returns an entry temperature in [°] Rømer.
         /// </summary>
         /// <param name="temperature">An input temperature object that can be converter to the Rømer unit.</param>
@@ -182,6 +282,16 @@ namespace UltimateTemperatureLibrary
             return new Rømer(temperature);
         }
 
+        /// <summary>
+        /// Returns an entry temperature in [°] Rømer.
+        /// </summary>
+        /// <param name="temperature">An input temperature string with valid value and unit that can be converter to the Rømer unit.</param>
+        /// <returns>A value in [°] Rømer.</returns>
+        /// <remarks>Use .Value property to get temperature as double.</remarks>
+        public static Rømer ToRømer(string temperature)
+        {
+            return new Rømer(temperature);
+        }
 
         #endregion
 

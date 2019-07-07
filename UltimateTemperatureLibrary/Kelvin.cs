@@ -279,7 +279,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Kelvin and any another temperature scale unit.</returns>
         public static Kelvin operator +(Kelvin kelvin, IConversionToKelvin b)
         {
-            return new Kelvin((kelvin?.Value ?? Constants.AbsoluteZeroInKelvin) + (b?.ToKelvin()?.Value ?? 0.0));
+            return new Kelvin((kelvin?.Value ?? Constants.AbsoluteZeroInKelvin) + (b?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin));
         }
 
         /// <summary>
@@ -290,7 +290,7 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Kelvin and any another temperature scale unit.</returns>
         public static Kelvin operator -(Kelvin kelvin, IConversionToKelvin b)
         {
-            return new Kelvin((kelvin?.Value ?? Constants.AbsoluteZeroInKelvin) - (b?.ToKelvin()?.Value ?? 0.0));
+            return new Kelvin((kelvin?.Value ?? Constants.AbsoluteZeroInKelvin) - (b?.ToKelvin()?.Value ?? Constants.AbsoluteZeroInKelvin));
         }
 
         #endregion

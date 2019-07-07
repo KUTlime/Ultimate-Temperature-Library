@@ -273,9 +273,9 @@ namespace UltimateTemperatureLibrary.UnitTests
             [DataRow((UInt32)5, (double)331, (double)37.87125, "The highest measured temperature on Earth.", OperationOverDoublePrecision.HighPrecision)]
             [DataRow((UInt32)6, (double)1941, (double)883.12125, "The melting point of titanium.", OperationOverDoublePrecision.MiddlePrecision)]
             [DataRow((UInt32)7, (double)5800, (double)2909.09625, "The temperature of the Sun surface.", OperationOverDoublePrecision.HighPrecision)]
-            public void WikiListTemperatureTest(UInt32 testNumber, double tempInKelvin, double tempInNewton, string testDescription, double delta)
+            public void WikiListTemperatureTest(UInt32 testNumber, double tempInKelvin, double tempInRømer, string testDescription, double delta)
             {
-                Assert.AreEqual(tempInKelvin, Converter.Røm2Kel(tempInNewton), delta);
+                Assert.AreEqual(tempInKelvin, Converter.Røm2Kel(tempInRømer), delta);
             }
         }
 

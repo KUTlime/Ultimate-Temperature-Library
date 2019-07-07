@@ -273,7 +273,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An addition of the Fahrenheit and any another temperature scale unit.</returns>
         public static Fahrenheit operator +(Fahrenheit fahrenheit, IConversionToFahrenheit b)
         {
-            return new Fahrenheit((fahrenheit?.Value ?? Constants.AbsoluteZeroInFahrenheit) + (b?.ToFahrenheit()?.Value ?? 0.0));
+            return new Fahrenheit(
+                    (fahrenheit?.Value ?? Constants.AbsoluteZeroInFahrenheit) +
+                    (b?.ToFahrenheit()?.Value ?? 0.0)
+                );
         }
 
         /// <summary>
@@ -284,7 +287,10 @@ namespace UltimateTemperatureLibrary
         /// <returns>An subtraction of the Fahrenheit and any another temperature scale unit.</returns>
         public static Fahrenheit operator -(Fahrenheit fahrenheit, IConversionToFahrenheit b)
         {
-            return new Fahrenheit((fahrenheit?.Value ?? Constants.AbsoluteZeroInFahrenheit) - (b?.ToFahrenheit()?.Value ?? 0.0));
+            return new Fahrenheit(
+                    (fahrenheit?.Value ?? Constants.AbsoluteZeroInFahrenheit) -
+                    (b?.ToFahrenheit()?.Value ?? 0.0)
+            );
         }
 
         #endregion

@@ -84,10 +84,31 @@ namespace UltimateTemperatureLibrary.UnitTests
 
             [TestCategory(TestCategory.BasicTests)]
             [TestMethod]
+            [ExpectedException(typeof(FormatException))]
+            public void NoValueStringConstructorTest()
+            {
+                var celsius = new Celsius(" K");
+            }
+
+            [TestCategory(TestCategory.BasicTests)]
+            [TestMethod]
             public void FromKelvinTest()
             {
                 var kelvin = new Kelvin(100.0);
                 Assert.AreEqual(kelvin.ToCelsius(), new Celsius(kelvin));
+            }
+
+            [TestCategory(TestCategory.IntegrationTests)]
+            [TestMethod]
+            public void FromOtherUnitsAsStringTest()
+            {
+                Assert.AreEqual(new Kelvin(100), new Celsius("100 K"));
+                Assert.AreEqual(new Fahrenheit(100), new Celsius("100 °F"));
+                Assert.AreEqual(new Rankine(100), new Celsius("100 °R"));
+                Assert.AreEqual(new Delisle(100), new Celsius("100 °D"));
+                Assert.AreEqual(new Newton(100), new Celsius("100 °N"));
+                Assert.AreEqual(new Réaumur(100), new Celsius("100 Ré"));
+                Assert.AreEqual(new Rømer(100), new Celsius("100 Rø"));
             }
 
             // DisplayName is not a good approach here because it is easy to misinterpret the string value for parsing.
@@ -4188,59 +4209,66 @@ namespace UltimateTemperatureLibrary.UnitTests
         }
 
         [TestClass]
-        public class ComplexOperationTests
+        public class CelsiusComplexOperationTests
         {
             [TestCategory(TestCategory.IntegrationTests)]
             [TestMethod]
             public void DemoTest()
             {
-                // Unit constructions
-                var celsius = new Celsius(20.0);
-                celsius = new Celsius(Constants.MeltingPointH2OInCelsius);
+                // Unit creation
+                var celsius = new Celsius(Constants.MeltingPointH2OInCelsius);
+                Assert.AreEqual(Constants.MeltingPointH2OInCelsius, celsius.Value);
+
                 celsius = new Celsius("50.8 °C");
-                celsius = new Celsius("-273.15 K");
-                var celsius1 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin));
+                Assert.AreEqual(new Celsius(50.8), celsius);
+
+                celsius = new Celsius("0 K");
+                Assert.AreEqual(new Kelvin(Constants.AbsoluteZeroInKelvin), celsius);
 
 
                 var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin);
+                var celsius2 = new Celsius(kelvin);
+                Assert.AreEqual(kelvin, celsius2);
+
 
                 // Aritmethics
-                var celsius3 = celsius + celsius1;
+                var celsius3 = celsius + celsius2;
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, celsius3.Value);
                 var celsius4 = celsius + kelvin;
-                celsius3 = celsius - celsius1;
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, celsius4.Value);
+                celsius3 = celsius - celsius2;
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, celsius3.Value);
                 celsius4 = celsius - kelvin;
+                Assert.AreEqual(Constants.AbsoluteZeroInCelsius, celsius4.Value);
 
                 celsius3.Value = 20;
                 celsius4.Value = 30;
 
                 celsius3 += celsius4;
+                Assert.AreEqual(50, celsius3.Value);
                 celsius3 -= celsius4;
+                Assert.AreEqual(20, celsius3.Value);
 
                 // OOP Conversion
                 var fahrenheit = new Fahrenheit(celsius.ToFahrenheit());
+                Assert.AreEqual(fahrenheit, celsius);
                 celsius = Celsius.ToCelsius(fahrenheit);
+                Assert.AreEqual(fahrenheit, celsius);
 
                 double someTemperatureValueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine);
                 double newValueInCelsius = Fahrenheit.ToCelsius(someTemperatureValueInFahrenheit).Value;
+                Assert.AreEqual(someTemperatureValueInFahrenheit, Converter.Cel2Fah(newValueInCelsius), OperationOverDoublePrecision.HighPrecision);
 
                 // Comparison
-                celsius3.Value = 20;
-                celsius4.Value = 20;
+                celsius.Value = 20;
+                celsius2.Value = 20;
 
-                if (celsius3 == celsius4)
-                {
-                    // ...
-                }
+                Assert.AreEqual(celsius, celsius2);
 
                 celsius = new Celsius(Constants.AbsoluteZeroInCelsius);
                 kelvin = new Kelvin(Constants.AbsoluteZeroInKelvin);
 
-                if (celsius == kelvin)
-                {
-                    // ...
-                }
-
-                Assert.AreEqual(celsius3, celsius4);
+                Assert.AreEqual(celsius, kelvin);
             }
         }
     }
