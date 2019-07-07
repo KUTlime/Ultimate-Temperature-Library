@@ -192,145 +192,145 @@
             <summary>
             An absolute thermodynamic zero temperature in [°] Celsius.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+            <seealso href="https://en.wikipedia.org/wiki/Celsius"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInFahrenheit">
             <summary>
             An absolute thermodynamic zero temperature in [°] Fahrenheit.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+            <seealso href="https://en.wikipedia.org/wiki/Fahrenheit"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInKelvin">
             <summary>
             An absolute thermodynamic zero temperature in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+            <seealso href="https://en.wikipedia.org/wiki/Kelvin"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRankine">
             <summary>
             An absolute thermodynamic zero temperature in [°] Rankine.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Rankine_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInDelisle">
             <summary>
             An absolute thermodynamic zero temperature in [°] Delisle.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Delisle_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInNewton">
             <summary>
             An absolute thermodynamic zero temperature in [°] Newton.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Newton_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRéaumur">
             <summary>
             An absolute thermodynamic zero temperature in Réaumur.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRømer">
             <summary>
             An absolute thermodynamic zero temperature in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInCelsius">
             <summary>
             A temperature of H2O melting point in [°] Celsius.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+            <seealso href="https://en.wikipedia.org/wiki/Celsius"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInFahrenheit">
             <summary>
             A temperature of H2O melting point in [°] Fahrenheit.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+            <seealso href="https://en.wikipedia.org/wiki/Fahrenheit"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInKelvin">
             <summary>
             A temperature of H2O melting point in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+            <seealso href="https://en.wikipedia.org/wiki/Kelvin"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRankine">
             <summary>
             A temperature of H2O melting point in [°] Rankine.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Rankine_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInDelisle">
             <summary>
             A temperature of H2O melting point in [°] Delisle.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Delisle_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInNewton">
             <summary>
             A temperature of H2O melting point in [°] Newton.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Newton_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRéaumur">
             <summary>
             A temperature of H2O melting point in Réaumur.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRømer">
             <summary>
             A temperature of H2O melting point in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInCelsius">
             <summary>
             A temperature of H2O boiling point in [°] Celsius.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+            <seealso href="https://en.wikipedia.org/wiki/Celsius"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInFahrenheit">
             <summary>
             A temperature of H2O boiling point in [°] Fahrenheit.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+            <seealso href="https://en.wikipedia.org/wiki/Fahrenheit"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInKelvin">
             <summary>
             A temperature of H2O boiling point in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+            <seealso href="https://en.wikipedia.org/wiki/Kelvin"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRankine">
             <summary>
             A temperature of H2O boiling point in [°] Rankine.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Rankine_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInDelisle">
             <summary>
             A temperature of H2O boiling point in [°] Delisle.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Delisle_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInNewton">
             <summary>
             A temperature of H2O boiling point in [°] Newton.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/Newton_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRéaumur">
             <summary>
             A temperature of H2O boiling point in Réaumur.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
         </member>
         <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRømer">
             <summary>
             A temperature of H2O boiling point in Kelvin.
             </summary>
-            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+            <seealso href="https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
         </member>
         <member name="T:UltimateTemperatureLibrary.Converter">
             <summary>
