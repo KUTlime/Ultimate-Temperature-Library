@@ -6,8 +6,7 @@
     <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
-    <Description>
-      The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
+    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
 
       Main feature
       ---------------
@@ -20,19 +19,18 @@
       - Thermo-physical constants
       - Accuracy at least to 12 decimal places, 13 decimal places mostly.
       - Well documented.
-    </Description>
+</Description>
     <LangVersion>latest</LangVersion>
     <Authors>Radek Zahradník, Ph.D.</Authors>
-    <Copyright>Radek Zahradník, All rights reserved.</Copyright>
+    <Copyright>© Radek Zahradník. All rights reserved.</Copyright>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>
-      v1.0.0.0:
-      - Initial public release.
-    </PackageReleaseNotes>
+    <PackageReleaseNotes>v1.0.0.0:
+- Initial public release.
+</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
   </PropertyGroup>
 

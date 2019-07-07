@@ -462,7 +462,6 @@
             </summary>
             <param name="value">A value in Kelvin.</param>
             <returns>A value in Delisle.</returns>
-            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
         </member>
         <member name="M:UltimateTemperatureLibrary.Converter.Kel2New(System.Double)">
             <summary>
