@@ -118,19 +118,19 @@ celsius_result = celsius + new Celsius(20);
 ## What is the order of unit parsing?
 Strings are parsed for unit in following order and sub-order by default:
 
-1. Kelvin
-2. Celsius
-3. Fahrenheit
-4. Rankine
-5. Delisle
-6. Newton
-7. Réaumur
-8. Rømer
+1. Kelvin ("K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN")
+2. Celsius ("C", "Cel", "CEL", "cel", "Celsius", "celsius", "CELSIUS")
+3. Fahrenheit ("F", "Fahrenheit", "Fah", "fahrenheit", "fah", "FAHRENHEIT")
+4. Rankine ("R", "Ra", "Ran", "Rankine", "ra", "ran", "rankine", "RANKINE")
+5. Delisle ("D", "De", "Delisle", "DELISLE", "delisle" )
+6. Newton ("N", "Newton", "newton", "NEWTON")
+7. Réaumur ("Re", "Ré", "re", "ré", "Réau", "Reau", "réau", "reau", "RÉAU", "REAU", "Réaumur", "Reaumur", "réaumur", "reaumur", "RÉAUMUR", "REAUMUR")
+8. Rømer ("Rø", "rø", "RØ", "Rømer", "rømer", "RØMER", "Ro", "ro", "Ro", "Romer", "romer", "ROMER")
 
 If no unit is present in string with valid float number, **Kelvin unit** is used.
 
 ## What is ø and how to type ø?
-ø is Latin Small Letter O with Stroke, see Links. You can type it as ALT+0216 for lowercase ø and ALT+0248 for the uppercase Ø but it depends on your OS character setup. See [this](http://www.fileformat.info/tip/microsoft/enter_unicode.htm) or [this](https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0)
+ø is Latin Small Letter O with Stroke, see Links. You can type it as ALT+0216 for lowercase ø and ALT+0248 for the uppercase Ø but it depends on your OS character setup. See [this](http://www.fileformat.info/tip/microsoft/enter_unicode.htm) or [this](https://support.office.com/en-us/article/insert-ascii-or-unicode-latin-based-symbols-and-characters-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0) link.
 
 ## Why only addition and subtraction between units is implemented?
 Multiplication/division doesn't really make any physical sense with temperature as an intensity quantity.
