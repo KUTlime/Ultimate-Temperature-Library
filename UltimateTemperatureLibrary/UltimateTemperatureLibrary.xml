@@ -1,0 +1,2346 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UltimateTemperatureLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:UltimateTemperatureLibrary.Celsius">
+            <summary>
+            Represents the Celsius scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.#ctor">
+            <summary>
+            Initializes a new instance of Celsius class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToCelsius)">
+            <summary>
+            Initializes a new instance of Celsius class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="celsius">An object that can be converted to the Celsius unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Celsius class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Celsius class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Celsius scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Celsius.Value">
+            <summary>
+            Gets a temperature value from the Celsius scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Celsius.RegexPatterns">
+            <summary>
+            Gets an array of the Celsius unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius, aka itself.
+            </summary>
+            <returns>A value in [°] Celsius (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToCelsius(UltimateTemperatureLibrary.Interfaces.IConversionToCelsius)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="celsius">An input temperature object that can be converter to the Celsius unit.</param>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.op_Addition(UltimateTemperatureLibrary.Celsius,UltimateTemperatureLibrary.Interfaces.IConversionToCelsius)">
+            <summary>
+            Adds a Celsius scale unit with any another temperature scale unit.
+            </summary>
+            <param name="celsius">A temperature in Celsius.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Celsius and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Celsius.op_Subtraction(UltimateTemperatureLibrary.Celsius,UltimateTemperatureLibrary.Interfaces.IConversionToCelsius)">
+            <summary>
+            Subtract a Celsius scale unit with any another temperature scale unit.
+            </summary>
+            <param name="celsius">A temperature in Celsius.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Celsius and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Constants">
+            <summary>
+            A temperature constants provider.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInCelsius">
+            <summary>
+            An absolute thermodynamic zero temperature in [°] Celsius.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInFahrenheit">
+            <summary>
+            An absolute thermodynamic zero temperature in [°] Fahrenheit.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInKelvin">
+            <summary>
+            An absolute thermodynamic zero temperature in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRankine">
+            <summary>
+            An absolute thermodynamic zero temperature in [°] Rankine.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInDelisle">
+            <summary>
+            An absolute thermodynamic zero temperature in [°] Delisle.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInNewton">
+            <summary>
+            An absolute thermodynamic zero temperature in [°] Newton.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRéaumur">
+            <summary>
+            An absolute thermodynamic zero temperature in Réaumur.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.AbsoluteZeroInRømer">
+            <summary>
+            An absolute thermodynamic zero temperature in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInCelsius">
+            <summary>
+            A temperature of H2O melting point in [°] Celsius.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInFahrenheit">
+            <summary>
+            A temperature of H2O melting point in [°] Fahrenheit.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInKelvin">
+            <summary>
+            A temperature of H2O melting point in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRankine">
+            <summary>
+            A temperature of H2O melting point in [°] Rankine.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInDelisle">
+            <summary>
+            A temperature of H2O melting point in [°] Delisle.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInNewton">
+            <summary>
+            A temperature of H2O melting point in [°] Newton.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRéaumur">
+            <summary>
+            A temperature of H2O melting point in Réaumur.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.MeltingPointH2OInRømer">
+            <summary>
+            A temperature of H2O melting point in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInCelsius">
+            <summary>
+            A temperature of H2O boiling point in [°] Celsius.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Celsius"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInFahrenheit">
+            <summary>
+            A temperature of H2O boiling point in [°] Fahrenheit.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Fahrenheit"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInKelvin">
+            <summary>
+            A temperature of H2O boiling point in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Kelvin"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRankine">
+            <summary>
+            A temperature of H2O boiling point in [°] Rankine.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Rankine_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInDelisle">
+            <summary>
+            A temperature of H2O boiling point in [°] Delisle.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInNewton">
+            <summary>
+            A temperature of H2O boiling point in [°] Newton.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Newton_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRéaumur">
+            <summary>
+            A temperature of H2O boiling point in Réaumur.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%A9aumur_scale"/>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Constants.BoilingPointH2OInRømer">
+            <summary>
+            A temperature of H2O boiling point in Kelvin.
+            </summary>
+            <seealso cref="!:https://en.wikipedia.org/wiki/R%C3%B8mer_scale"/>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Converter">
+            <summary>
+            Provides a complex double-to-double conversion between all temperature units.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Kel(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Kelvin.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Fah(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Ran(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Rankine.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Del(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Delisle.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2New(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Newton.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Réau(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Cel2Røm(System.Double)">
+            <summary>
+            Converts a double value in Celsius to double value in Rømer.
+            </summary>
+            <param name="value">A value in Celsius.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Kel(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Kelvin.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Cel(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Celsius.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Ran(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Rankine.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Del(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Delisle.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2New(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Newton.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Réau(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Fah2Røm(System.Double)">
+            <summary>
+            Converts a double value in Fahrenheit to double value in Rømer.
+            </summary>
+            <param name="value">A value in Fahrenheit.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Cel(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Celsius.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Fah(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Ran(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Rankine.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Del(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Delisle.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Delisle.</returns>
+            <seealso cref="!:https://en.wikipedia.org/wiki/Delisle_scale"/>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2New(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Newton.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Réau(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Kel2Røm(System.Double)">
+            <summary>
+            Converts a double value in Kelvin to double value in Rømer.
+            </summary>
+            <param name="value">A value in Kelvin.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Kel(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Kelvine.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Cel(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Celsius.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Fah(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Del(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Delisle.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2New(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Newton.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Réau(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Ran2Røm(System.Double)">
+            <summary>
+            Converts a double value in Rankine to double value in Rømer.
+            </summary>
+            <param name="value">A value in Rankine.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Kel(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Kelvin.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Cel(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Celsius.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Fah(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Ran(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Rankine.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2New(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Newton.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Réau(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Del2Røm(System.Double)">
+            <summary>
+            Converts a double value in Delisle to double value in Rømer.
+            </summary>
+            <param name="value">A value in Delisle.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Kel(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Kelvin.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Cel(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Celsius.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Fah(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Ran(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Rankine.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Del(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Delisle.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Réau(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Réaumur.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.New2Røm(System.Double)">
+            <summary>
+            Converts a double value in Newton to double value in Rømer.
+            </summary>
+            <param name="value">A value in Newton.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Kel(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Kelvin.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Cel(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Celsius.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Fah(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Ran(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Rankine.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Del(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Delisle.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2New(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Newton.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Réau2Røm(System.Double)">
+            <summary>
+            Converts a double value in Réaumur to double value in Rømer.
+            </summary>
+            <param name="value">A value in Réaumur.</param>
+            <returns>A value in Rømer.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Kel(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Kelvin.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Kelvin.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Cel(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Celsius.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Celsius.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Fah(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Fahrenheit.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Fahrenheit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Ran(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Rankine.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Rankine.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Del(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Delisle.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Delisle.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2New(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Newton.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Newton.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Converter.Røm2Réau(System.Double)">
+            <summary>
+            Converts a double value in Rømer to double value in Réaumur.
+            </summary>
+            <param name="value">A value inRømer.</param>
+            <returns>A value in Réaumur.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Delisle">
+            <summary>
+            Represents the Delisle scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.#ctor">
+            <summary>
+            Initializes a new instance of Delisle class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToDelisle)">
+            <summary>
+            Initializes a new instance of Delisle class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="delisle">An object that can be converted to the Delisle unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Delisle class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Delisle class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Delisle scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Delisle.Value">
+            <summary>
+            Gets a temperature value from the Delisle scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Delisle.RegexPatterns">
+            <summary>
+            Gets an array of the Delisle unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius.
+            </summary>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle, aka itself.
+            </summary>
+            <returns>A value in [°] Delisle (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToDelisle(UltimateTemperatureLibrary.Interfaces.IConversionToDelisle)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="delisle">An input temperature object that can be converter to the Delisle unit.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Delisle.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.op_Addition(UltimateTemperatureLibrary.Delisle,UltimateTemperatureLibrary.Interfaces.IConversionToDelisle)">
+            <summary>
+            Adds a Delisle scale unit with any another temperature scale unit.
+            </summary>
+            <param name="delisle">A temperature in Delisle.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Delisle and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Delisle.op_Subtraction(UltimateTemperatureLibrary.Delisle,UltimateTemperatureLibrary.Interfaces.IConversionToDelisle)">
+            <summary>
+            Subtract a Delisle scale unit with any another temperature scale unit.
+            </summary>
+            <param name="delisle">A temperature in Delisle.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Delisle and any another temperature scale unit.</returns>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Kelvin">
+            <summary>
+            A [°] Kelvin temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Celsius">
+            <summary>
+            A [°] Celsius temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Fahrenheit">
+            <summary>
+            A [°] Fahrenheit temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Rankine">
+            <summary>
+            A [°] Rankine temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Delisle">
+            <summary>
+            A [°] Delisle temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Newton">
+            <summary>
+            A [°] Newton temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Réaumur">
+            <summary>
+            A [°] Réaumur temperature scale.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Enums.TemperatureScale.Rømer">
+            <summary>
+            A [°] Rømer temperature scale.
+            </summary>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.ExtensionMethods.StringExtensions">
+            <summary>
+            A class encapsulation for string extension.
+            </summary>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Fahrenheit">
+            <summary>
+            Represents the Fahrenheit scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.#ctor">
+            <summary>
+            Initializes a new instance of Fahrenheit class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit)">
+            <summary>
+            Initializes a new instance of Fahrenheit class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="fahrenheit">An object that can be converted to the Fahrenheit unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Fahrenheit class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Fahrenheit class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Fahrenheit scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Fahrenheit.Value">
+            <summary>
+            Gets a temperature value from the Fahrenheit scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Fahrenheit.RegexPatterns">
+            <summary>
+            Gets an array of the Fahrenheit unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit, aka itself.
+            </summary>
+            <returns>A value in [°] Fahrenheit (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToFahrenheit(UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="fahrenheit">An input temperature object that can be converter to the Fahrenheit unit.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Fahrenheit.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.op_Addition(UltimateTemperatureLibrary.Fahrenheit,UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit)">
+            <summary>
+            Adds a Fahrenheit scale unit with any another temperature scale unit.
+            </summary>
+            <param name="fahrenheit">A temperature in Fahrenheit.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Fahrenheit and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Fahrenheit.op_Subtraction(UltimateTemperatureLibrary.Fahrenheit,UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit)">
+            <summary>
+            Subtract a Fahrenheit scale unit with any another temperature scale unit.
+            </summary>
+            <param name="fahrenheit">A temperature in Fahrenheit.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Fahrenheit and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToCelsius">
+            <summary>
+            Represents a Celsius scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToCelsius.ToCelsius">
+            <summary>
+            Returns temperature converted to the Celsius unit.
+            </summary>
+            <returns>A temperature converted to the Celsius unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToDelisle">
+            <summary>
+            Represents a Delisle scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToDelisle.ToDelisle">
+            <summary>
+            Returns temperature converted to the Delisle unit.
+            </summary>
+            <returns>A temperature converted to the Delisle unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit">
+            <summary>
+            Represents a Fahrenheit scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit.ToFahrenheit">
+            <summary>
+            Returns temperature converted to the Fahrenheit unit.
+            </summary>
+            <returns>A temperature converted to the Fahrenheit unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToKelvin">
+            <summary>
+            Represents a Kelvin scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToKelvin.ToKelvin">
+            <summary>
+            Returns temperature converted to the Kelvin unit.
+            </summary>
+            <returns>A temperature converted to the Kelvin unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToNewton">
+            <summary>
+            Represents a Newton scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToNewton.ToNewton">
+            <summary>
+            Returns temperature converted to the Newton unit.
+            </summary>
+            <returns>A temperature converted to the Newton unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToRankine">
+            <summary>
+            Represents a Rankine scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToRankine.ToRankine">
+            <summary>
+            Returns temperature converted to the Rankine unit.
+            </summary>
+            <returns>A temperature converted to the Rankine unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur">
+            <summary>
+            Represents a Réaumur scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur.ToRéaumur">
+            <summary>
+            Returns temperature converted to the Réaumur unit.
+            </summary>
+            <returns>A temperature converted to the Réaumur unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Interfaces.IConversionToRømer">
+            <summary>
+            Represents a Rømer scale convertible object.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Interfaces.IConversionToRømer.ToRømer">
+            <summary>
+            Returns temperature converted to the Rømer unit.
+            </summary>
+            <returns>A temperature converted to the Rømer unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Kelvin">
+            <summary>
+            Represents the Kelvin scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.#ctor">
+            <summary>
+            Initializes a new instance of Kelvin class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            Initializes a new instance of Kelvin class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="kelvin">An object that can be converted to the Kelvin unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Kelvin class using parsing from string.
+            <para>Kelvin unit is also used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Kelvin class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Kelvin scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Kelvin.Value">
+            <summary>
+            Gets a temperature value from the Kelvin scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Kelvin.RegexPatterns">
+            <summary>
+            Gets an array of the Kelvin unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin, aka itself.
+            </summary>
+            <returns>A value in Kelvin (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToCelsius">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToKelvin(UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="kelvin">An input temperature object that can be converter to the Kelvin unit.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in Kelvin.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.op_Addition(UltimateTemperatureLibrary.Kelvin,UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            Adds a Kelvin scale unit with any another temperature scale unit.
+            </summary>
+            <param name="kelvin">A temperature in Kelvin.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Kelvin and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.op_Subtraction(UltimateTemperatureLibrary.Kelvin,UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            Subtract a Kelvin scale unit with any another temperature scale unit.
+            </summary>
+            <param name="kelvin">A temperature in Kelvin.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Kelvin and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Newton">
+            <summary>
+            Represents the Newton scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.#ctor">
+            <summary>
+            Initializes a new instance of Newton class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToNewton)">
+            <summary>
+            Initializes a new instance of Newton class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="newton">An object that can be converted to the Newton unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Newton class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Newton class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Newton scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Newton.Value">
+            <summary>
+            Gets a temperature value from the Newton scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Newton.RegexPatterns">
+            <summary>
+            Gets an array of the Newton unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius.
+            </summary>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton, aka itself.
+            </summary>
+            <returns>A value in [°] Newton (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToNewton(UltimateTemperatureLibrary.Interfaces.IConversionToNewton)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="newton">An input temperature object that can be converter to the Newton unit.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Newton.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.op_Addition(UltimateTemperatureLibrary.Newton,UltimateTemperatureLibrary.Interfaces.IConversionToNewton)">
+            <summary>
+            Adds a Newton scale unit with any another temperature scale unit.
+            </summary>
+            <param name="newton">A temperature in Newton.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Newton and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Newton.op_Subtraction(UltimateTemperatureLibrary.Newton,UltimateTemperatureLibrary.Interfaces.IConversionToNewton)">
+            <summary>
+            Subtract a Newton scale unit with any another temperature scale unit.
+            </summary>
+            <param name="newton">A temperature in Newton.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Newton and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Rankine">
+            <summary>
+            Represents the Rankine scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.#ctor">
+            <summary>
+            Initializes a new instance of Rankine class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToRankine)">
+            <summary>
+            Initializes a new instance of Rankine class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="rankine">An object that can be converted to the Rankine unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Rankine class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Rankine class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Rankine scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Rankine.Value">
+            <summary>
+            Gets a temperature value from the Rankine scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Rankine.RegexPatterns">
+            <summary>
+            Gets an array of the Rankine unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius.
+            </summary>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine, aka itself.
+            </summary>
+            <returns>A value in [°] Rankine (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in [°] Celsius.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRankine(UltimateTemperatureLibrary.Interfaces.IConversionToRankine)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="rankine">An input temperature object that can be converter to the Rankine unit.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Rankine.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.op_Addition(UltimateTemperatureLibrary.Rankine,UltimateTemperatureLibrary.Interfaces.IConversionToRankine)">
+            <summary>
+            Adds a Rankine scale unit with any another temperature scale unit.
+            </summary>
+            <param name="rankine">A temperature in Rankine.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Rankine and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rankine.op_Subtraction(UltimateTemperatureLibrary.Rankine,UltimateTemperatureLibrary.Interfaces.IConversionToRankine)">
+            <summary>
+            Subtract a Rankine scale unit with any another temperature scale unit.
+            </summary>
+            <param name="rankine">A temperature in Rankine.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Rankine and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Réaumur">
+            <summary>
+            Represents the Réaumur scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.#ctor">
+            <summary>
+            Initializes a new instance of Réaumur class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur)">
+            <summary>
+            Initializes a new instance of Réaumur class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="réaumur">An object that can be converted to the Réaumur unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Réaumur class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Réaumur class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Réaumur scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Réaumur.Value">
+            <summary>
+            Gets a temperature value from the Réaumur scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Réaumur.RegexPatterns">
+            <summary>
+            Gets an array of the Réaumur unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius.
+            </summary>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur, aka itself.
+            </summary>
+            <returns>A value in [°] Réaumur (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer.
+            </summary>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in [°] Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRømer(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="value">An input double value in [°] Réaumur.</param>
+            <returns>A value in Rømer.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.ToRéaumur(UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="réaumur">An input temperature object that can be converter to the Réaumur unit.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.op_Addition(UltimateTemperatureLibrary.Réaumur,UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur)">
+            <summary>
+            Adds a Réaumur scale unit with any another temperature scale unit.
+            </summary>
+            <param name="réaumur">A temperature in Réaumur.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Réaumur and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Réaumur.op_Subtraction(UltimateTemperatureLibrary.Réaumur,UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur)">
+            <summary>
+            Subtract a Réaumur scale unit with any another temperature scale unit.
+            </summary>
+            <param name="réaumur">A temperature in Réaumur.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Réaumur and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Rømer">
+            <summary>
+            Represents the Rømer scale unit.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.#ctor">
+            <summary>
+            Initializes a new instance of Rømer class.
+            <para>Value is set to Absolute zero.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.#ctor(UltimateTemperatureLibrary.Interfaces.IConversionToRømer)">
+            <summary>
+            Initializes a new instance of Rømer class using by shared interface.
+            <para>Value is set to Absolute zero if null object is passed into constructor.</para>
+            </summary>
+            <param name="rømer">An object that can be converted to the Rømer unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of Rømer class using parsing from string.
+            <para>Kelvin unit is used when no information about unit is provided in the input string.</para>
+            <para>Value is set to Absolute zero if null object or invalid string is passed into constructor.</para>
+            </summary>
+            <param name="value">A string caring an information about value and unit.</param>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of Rømer class using a double value.
+            </summary>
+            <param name="value">An initialization value from the Rømer scale.</param>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Rømer.Value">
+            <summary>
+            Gets a temperature value from the Rømer scale.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.Rømer.RegexPatterns">
+            <summary>
+            Gets an array of the Rømer unit identifications for a in-string scale matching.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToKelvin">
+            <summary>
+            Returns the stored temperature in Kelvin.
+            </summary>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToCelsius">
+            <summary>
+            Returns the stored temperature in [°] Celsius.
+            </summary>
+            <returns>A value in Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToFahrenheit">
+            <summary>
+            Returns the stored temperature in [°] Fahrenheit.
+            </summary>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRankine">
+            <summary>
+            Returns the stored temperature in [°] Rankine.
+            </summary>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToDelisle">
+            <summary>
+            Returns the stored temperature in [°] Delisle.
+            </summary>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToNewton">
+            <summary>
+            Returns the stored temperature in [°] Newton.
+            </summary>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRéaumur">
+            <summary>
+            Returns the stored temperature in [°] Réaumur.
+            </summary>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRømer">
+            <summary>
+            Returns the stored temperature in [°] Rømer, aka itself.
+            </summary>
+            <returns>A value in [°] Rømer (a reference to itself).</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+            <remarks>Interface is implemented because of +/- implementation.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToKelvin(System.Double)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToCelsius(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in Celsius.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToFahrenheit(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRankine(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToDelisle(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToNewton(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRéaumur(System.Double)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="value">An input double value in [°] Rømer.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get double value.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.ToRømer(UltimateTemperatureLibrary.Interfaces.IConversionToRømer)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="rømer">An input temperature object that can be converter to the Rømer unit.</param>
+            <returns>A value in [°] Rømer.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.op_Addition(UltimateTemperatureLibrary.Rømer,UltimateTemperatureLibrary.Interfaces.IConversionToRømer)">
+            <summary>
+            Adds a Rømer scale unit with any another temperature scale unit.
+            </summary>
+            <param name="rømer">A temperature in Rømer.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An addition of the Rømer and any another temperature scale unit.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Rømer.op_Subtraction(UltimateTemperatureLibrary.Rømer,UltimateTemperatureLibrary.Interfaces.IConversionToRømer)">
+            <summary>
+            Subtract a Rømer scale unit with any another temperature scale unit.
+            </summary>
+            <param name="rømer">A temperature in Rømer.</param>
+            <param name="b">An object providing a temperature value and a scale type.</param>
+            <returns>An subtraction of the Rømer and any another temperature scale unit.</returns>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.TemperatureUnit">
+            <summary>
+            Provides a shared functionality for all temperature units.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToString">
+            <summary>
+            Returns a string that represents an interval double value.
+            </summary>
+            <returns>An internal double value in form of string.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.Equals(UltimateTemperatureLibrary.TemperatureUnit)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="other">The object to compare with the current object.</param>
+            <returns>True if the specified object is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.Equals(UltimateTemperatureLibrary.Interfaces.IConversionToKelvin,UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.op_Equality(UltimateTemperatureLibrary.TemperatureUnit,UltimateTemperatureLibrary.TemperatureUnit)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.op_Inequality(UltimateTemperatureLibrary.TemperatureUnit,UltimateTemperatureLibrary.TemperatureUnit)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.TemperatureUnit.Value">
+            <summary>
+            An internal value storage.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.TemperatureUnit.RegexPatterns">
+            <summary>
+            Gets or sets Regex patterns which are used for unit parsing from string.
+            </summary>
+        </member>
+        <member name="P:UltimateTemperatureLibrary.TemperatureUnit.RegexPatternRaw">
+            <summary>
+            Gets or sets an user Regex pattern which are used for unit parsing from string.
+            <para>This overrides the RegexPatterns property.</para>
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToKelvin(UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Kelvin unit.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToKelvin(System.String)">
+            <summary>
+            Returns an entry temperature in Kelvin.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Kelvin unit.</param>
+            <returns>A value in Kelvin.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToCelsius(UltimateTemperatureLibrary.Interfaces.IConversionToCelsius)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Celsius unit.</param>
+            <returns>A value in Celsius.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToCelsius(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Celsius.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Celsius unit.</param>
+            <returns>A value in Celsius.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToFahrenheit(UltimateTemperatureLibrary.Interfaces.IConversionToFahrenheit)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Fahrenheit unit.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToFahrenheit(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Fahrenheit.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Fahrenheit unit.</param>
+            <returns>A value in [°] Fahrenheit.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRankine(UltimateTemperatureLibrary.Interfaces.IConversionToRankine)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Rankine unit.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRankine(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Rankine.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Rankine unit.</param>
+            <returns>A value in [°] Rankine.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToDelisle(UltimateTemperatureLibrary.Interfaces.IConversionToDelisle)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Delisle unit.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToDelisle(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Delisle.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Delisle unit.</param>
+            <returns>A value in [°] Delisle.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToNewton(UltimateTemperatureLibrary.Interfaces.IConversionToNewton)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Newton unit.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToNewton(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Newton.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Newton unit.</param>
+            <returns>A value in [°] Newton.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRéaumur(UltimateTemperatureLibrary.Interfaces.IConversionToRéaumur)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Réaumur unit.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRéaumur(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Réaumur.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Réaumur unit.</param>
+            <returns>A value in [°] Réaumur.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRømer(UltimateTemperatureLibrary.Interfaces.IConversionToRømer)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="temperature">An input temperature object that can be converter to the Rømer unit.</param>
+            <returns>A value in [°] Rømer.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToRømer(System.String)">
+            <summary>
+            Returns an entry temperature in [°] Rømer.
+            </summary>
+            <param name="temperature">An input temperature string with valid value and unit that can be converter to the Rømer unit.</param>
+            <returns>A value in [°] Rømer.</returns>
+            <remarks>Use .Value property to get temperature as double.</remarks>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Utils.OperationOverDoublePrecision">
+            <summary>
+            Provides  a flouting point precision levels.
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Utils.OperationOverDoublePrecision.HighPrecision">
+            <summary>
+            A high precision of calculation (error less than 1E-13).
+            </summary>
+        </member>
+        <member name="F:UltimateTemperatureLibrary.Utils.OperationOverDoublePrecision.MiddlePrecision">
+            <summary>
+            A middle precision of calculation (error less than 1E-12).
+            </summary>
+        </member>
+        <member name="T:UltimateTemperatureLibrary.Utils.TemperatureUnitParser">
+            <summary>
+            Provides from string to temperature unit parser.
+            </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Utils.TemperatureUnitParser.Parse(System.String)">
+            <summary>
+            Returns a temperature unit converted from input string.
+            </summary>
+            <param name="value">A string for value and unit parsing.</param>
+            <returns>An object convertible to the Kelvin unit.</returns>
+        </member>
+    </members>
+</doc>

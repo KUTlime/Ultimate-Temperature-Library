@@ -6,8 +6,16 @@ using UltimateTemperatureLibrary.Interfaces;
 
 namespace UltimateTemperatureLibrary.Utils
 {
+    /// <summary>
+    /// Provides from string to temperature unit parser.
+    /// </summary>
     public class TemperatureUnitParser
     {
+        /// <summary>
+        /// Returns a temperature unit converted from input string.
+        /// </summary>
+        /// <param name="value">A string for value and unit parsing.</param>
+        /// <returns>An object convertible to the Kelvin unit.</returns>
         public static IConversionToKelvin Parse(string value)
         {
             //value = value.RemoveAllWhitespaces();

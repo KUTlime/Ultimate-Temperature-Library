@@ -10,7 +10,7 @@
     <LangVersion>latest</LangVersion>
     <Authors>Radek Zahradník, Ph.D.</Authors>
     <Copyright>GPL v3</Copyright>
-    <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.html</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
