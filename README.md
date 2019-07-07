@@ -118,14 +118,14 @@ celsius_result = celsius + new Celsius(20);
 ## What is the order of unit parsing?
 Strings are parsed for unit in following order and sub-order by default:
 
-1. Kelvin ("K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN")
-2. Celsius ("C", "Cel", "CEL", "cel", "Celsius", "celsius", "CELSIUS")
-3. Fahrenheit ("F", "Fahrenheit", "Fah", "fahrenheit", "fah", "FAHRENHEIT")
-4. Rankine ("R", "Ra", "Ran", "Rankine", "ra", "ran", "rankine", "RANKINE")
-5. Delisle ("D", "De", "Delisle", "DELISLE", "delisle" )
-6. Newton ("N", "Newton", "newton", "NEWTON")
-7. Réaumur ("Re", "Ré", "re", "ré", "Réau", "Reau", "réau", "reau", "RÉAU", "REAU", "Réaumur", "Reaumur", "réaumur", "reaumur", "RÉAUMUR", "REAUMUR")
-8. Rømer ("Rø", "rø", "RØ", "Rømer", "rømer", "RØMER", "Ro", "ro", "Ro", "Romer", "romer", "ROMER")
+1. Kelvin (K, Kel, Kelvin, kel, kelvin, KELVIN)
+2. Celsius (C, Cel, CEL, cel, Celsius, celsius, CELSIUS)
+3. Fahrenheit (F, Fahrenheit, Fah, fahrenheit, fah, FAHRENHEIT)
+4. Rankine (R, Ra, Ran, Rankine, ra, ran, rankine, RANKINE)
+5. Delisle (D, De, Delisle, DELISLE, delisle )
+6. Newton (N, Newton, newton, NEWTON)
+7. Réaumur (Re, Ré, re, ré, Réau, Reau, réau, reau, RÉAU, REAU, Réaumur, Reaumur, réaumur, reaumur, RÉAUMUR, REAUMUR)
+8. Rømer (Rø, rø, RØ, Rømer, rømer, RØMER, Ro, ro, Ro, Romer, romer, ROMER)
 
 If no unit is present in string with valid float number, **Kelvin unit** is used.
 
