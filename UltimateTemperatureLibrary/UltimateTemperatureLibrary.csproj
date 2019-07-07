@@ -11,13 +11,19 @@
     <Authors>Radek Zahradník, Ph.D.</Authors>
     <Copyright>© Radek Zahradník. All rights reserved.</Copyright>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageSummary>Ultimate temperature library for complex interaction with temperature.</PackageSummary>
+    <Summary>Ultimate temperature library for complex interaction with temperature.</Summary>
     <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <Title>Ultimate Temperature Library</Title>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>v1.0.0.0: 
-Initial public release.</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      v1.0.0.0:
+      Initial public release.
+    </PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
