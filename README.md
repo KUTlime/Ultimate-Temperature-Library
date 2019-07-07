@@ -14,6 +14,7 @@ The Ultimate Temperature Library brings complex functionality when working with 
 - Double2Double convertor 
 - Thermophysical constants
 - Accuracy at least to 12 decimal places, 13 decimal places mostly.
+- Well documented.
 
 
 # Use
