@@ -1,24 +1,39 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
     <RootNamespace>UltimateTemperatureLibrary</RootNamespace>
     <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer</PackageTags>
-    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
-Icon by: http://pngimg.com/download/77546</Description>
+    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
+    <Description>
+      The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
+
+      Main feature
+      ---------------
+      - Implements all temperature scales (Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer)
+      - .NET Standard 1.0 (multiplatform use)
+      - Well tested (+10000 UTs)
+      - OOP approach (type safety when manipulation is in place)
+      - Flexible parsing from string
+      - Double2Double converter
+      - Thermo-physical constants
+      - Accuracy at least to 12 decimal places, 13 decimal places mostly.
+      - Well documented.
+    </Description>
     <LangVersion>latest</LangVersion>
     <Authors>Radek Zahradník, Ph.D.</Authors>
-    <Copyright>GPL v3</Copyright>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <Copyright>Radek Zahradník, All rights reserved.</Copyright>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
-    <RepositoryType>Github</RepositoryType>
+    <RepositoryType>Git</RepositoryType>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>v1.0.0.0:
-- Initial public release.</PackageReleaseNotes>
-    <PackageIconUrl>http://pngimg.com/uploads/thermometer/thermometer_PNG28.png</PackageIconUrl>
+    <PackageReleaseNotes>
+      v1.0.0.0:
+      - Initial public release.
+    </PackageReleaseNotes>
+    <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
