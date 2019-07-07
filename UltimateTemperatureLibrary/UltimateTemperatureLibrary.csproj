@@ -6,7 +6,8 @@
     <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer</PackageTags>
-    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.</Description>
+    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
+Icon by: http://pngimg.com/download/77546</Description>
     <LangVersion>latest</LangVersion>
     <Authors>Radek Zahradník, Ph.D.</Authors>
     <Copyright>GPL v3</Copyright>
@@ -15,7 +16,8 @@
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>Icon by: http://pngimg.com/download/77546</PackageReleaseNotes>
+    <PackageReleaseNotes>v1.0.0.0:
+- Initial public release.</PackageReleaseNotes>
     <PackageIconUrl>http://pngimg.com/uploads/thermometer/thermometer_PNG28.png</PackageIconUrl>
   </PropertyGroup>
 
@@ -24,5 +26,9 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 
 </Project>

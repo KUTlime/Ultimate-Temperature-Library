@@ -11,7 +11,7 @@ namespace UltimateTemperatureLibrary
     {
 
         /// <summary>
-        /// Returns a string that represents an interval double value.
+        /// Returns a string that represents an internal double value.
         /// </summary>
         /// <returns>An internal double value in form of string.</returns>
         public override string ToString()

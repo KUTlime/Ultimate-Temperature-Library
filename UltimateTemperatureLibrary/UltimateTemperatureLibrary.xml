@@ -954,6 +954,13 @@
             A class encapsulation for string extension.
             </summary>
         </member>
+        <member name="M:UltimateTemperatureLibrary.ExtensionMethods.StringExtensions.RemoveAllWhitespaces(System.String)">
+            <summary>
+            Removes all whitespace (Char.IsWhiteSpace() | True) characters from a string.
+            </summary>
+            <param name="input">An input string from which whitespace character should be removed.</param>
+            <returns>A new string without whitespace characters.</returns>
+        </member>
         <member name="T:UltimateTemperatureLibrary.Fahrenheit">
             <summary>
             Represents the Fahrenheit scale unit.
@@ -1262,6 +1269,12 @@
             <summary>
             Gets an array of the Kelvin unit identifications for a in-string scale matching.
             </summary>
+        </member>
+        <member name="M:UltimateTemperatureLibrary.Kelvin.ToString">
+            <summary>
+            Return stored temperature value with unit identification.
+            </summary>
+            <returns>A stored temperature value and unit in form of string.</returns>
         </member>
         <member name="M:UltimateTemperatureLibrary.Kelvin.ToKelvin">
             <summary>
@@ -2123,7 +2136,7 @@
         </member>
         <member name="M:UltimateTemperatureLibrary.TemperatureUnit.ToString">
             <summary>
-            Returns a string that represents an interval double value.
+            Returns a string that represents an internal double value.
             </summary>
             <returns>An internal double value in form of string.</returns>
         </member>

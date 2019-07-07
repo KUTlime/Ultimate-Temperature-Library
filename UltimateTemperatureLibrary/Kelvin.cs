@@ -83,6 +83,10 @@ namespace UltimateTemperatureLibrary
         /// </summary>
         public override string[] RegexPatterns { get; protected set; } = { "K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN" };
 
+        /// <summary>
+        /// Return stored temperature value with unit identification.
+        /// </summary>
+        /// <returns>A stored temperature value and unit in form of string.</returns>
         public override string ToString()
         {
             return $"{Value} {RegexPatterns[0]}";
