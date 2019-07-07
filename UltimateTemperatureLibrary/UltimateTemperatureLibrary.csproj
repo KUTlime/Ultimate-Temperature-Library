@@ -6,20 +6,7 @@
     <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
-    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature.
-
-      Main feature
-      ---------------
-      - Implements all temperature scales (Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer)
-      - .NET Standard 1.0 (multiplatform use)
-      - Well tested (+10000 UTs)
-      - OOP approach (type safety when manipulation is in place)
-      - Flexible parsing from string
-      - Double2Double converter
-      - Thermo-physical constants
-      - Accuracy at least to 12 decimal places, 13 decimal places mostly.
-      - Well documented.
-</Description>
+    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature. You can use double-to-double converter, classes for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur, Rømer, their conversion, comparison and more.</Description>
     <LangVersion>latest</LangVersion>
     <Authors>Radek Zahradník, Ph.D.</Authors>
     <Copyright>© Radek Zahradník. All rights reserved.</Copyright>
@@ -28,9 +15,8 @@
     <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>v1.0.0.0:
-- Initial public release.
-</PackageReleaseNotes>
+    <PackageReleaseNotes>v1.0.0.0: 
+Initial public release.</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
   </PropertyGroup>
 
