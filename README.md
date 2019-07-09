@@ -17,7 +17,7 @@ The Ultimate Temperature Library brings complex functionality when working with 
 - Well documented.
 
 
-# Use
+# Basic use
 ```csharp
 // Unit constructions
 var celsius = new Celsius(); // Absolute zero is used when an empty unit constructor is called.
@@ -25,8 +25,13 @@ celsius = new Celsius(20.0);  // Double value interpreted as 20 °C.
 celsius = new Celsius(Constants.MeltingPointH2OInCelsius); // A thermo-physical constant used as double.
 celsius = new Celsius("50.8 °C");  // String parsing with some Celsius scale value and unit...
 celsius = new Celsius("-273.15 K"); // ...or any another unit that is transferred appropriately.
-var celsius1 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin)); // Directly from other unit.
-var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin); // Same applies to other unit ctors.
+var celsius1 = new Celsius(celsius); // Directly from other unit...
+var celsius2 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin)); // ...or any another unit.
+var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin); // Same applies to other unit ctors...
+var delisle = new Delisle("100 °Ré");
+
+// Double value extraction from units
+double celsiusAsDouble = celsius.Value;  // Use Value property.
 
 // Arithmetics(T2 = T1 +/- ΔT)
 var celsius3 = celsius + celsius1;  // Same unit...
@@ -44,8 +49,8 @@ celsius3 -= celsius4;  // ... same for subtraction.
 double valueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine);
 
 // OOP Conversion
-var fahrenheit = new Fahrenheit(celsius.ToFahrenheit()); // From an instance.
-celsius = Celsius.ToCelsius(fahrenheit);                 // Static conversion.
+var fahrenheit = celsius.ToFahrenheit(); // From an instance.
+var newton = Celsius.ToNewton(fahrenheit); // Static conversion.
 
 // Extraction of converted temperature as double
 var delisle = new Delisle().
