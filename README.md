@@ -30,8 +30,10 @@ var celsius2 = new Celsius(new Kelvin(Constants.MeltingPointH2OInKelvin)); // ..
 var kelvin = new Kelvin(Constants.MeltingPointH2OInKelvin); // Same applies to other unit ctors...
 var delisle = new Delisle("100 °Ré");
 
+
 // Double value extraction from units
 double celsiusAsDouble = celsius.Value;  // Use Value property.
+
 
 // Arithmetics(T2 = T1 +/- ΔT)
 var celsius3 = celsius + celsius1;  // Same unit...
@@ -45,20 +47,25 @@ celsius4.Value = 30;   // Direct manipulation with temperature value.
 celsius3 += celsius4;  // Compound operators are also provided...
 celsius3 -= celsius4;  // ... same for subtraction.
 
-// Double-to-double conversion
+
+// Double-to-double conversion (28 different methods are provided)
 double valueInFahrenheit = Converter.Ran2Fah(Constants.BoilingPointH2OInRankine);
+
 
 // OOP Conversion
 var fahrenheit = celsius.ToFahrenheit(); // From an instance.
 var newton = Celsius.ToNewton(fahrenheit); // Static conversion.
 
+
 // Extraction of converted temperature as double
 var delisle = new Delisle().
 double value = delisle.Value;  // Absolute zero in Delisle is returned.
 
+
 // Static conversion from a Rømer value as double to a Celsius instance and double extraction
 var rømer = new Rømer();
 double cel = Rømer.ToCelsius(rømer.Value).Value; 
+
 
 // Comparison
 celsius3.Value = 20;
@@ -76,6 +83,7 @@ if (celsius == kelvin)
 {
 	// ...
 }
+
 
 // Test for correctness when Value property is updated
 celsius.Value = -500; // Throws an exception.
