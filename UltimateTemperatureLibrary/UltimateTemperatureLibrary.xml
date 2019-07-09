@@ -2155,26 +2155,26 @@
         </member>
         <member name="M:UltimateTemperatureLibrary.TemperatureUnit.Equals(UltimateTemperatureLibrary.Interfaces.IConversionToKelvin,UltimateTemperatureLibrary.Interfaces.IConversionToKelvin)">
             <summary>
-            
+            Determines whether the specified temperature objects are equal. Different scales are transformed appropriately.
             </summary>
-            <param name="left"></param>
-            <param name="right"></param>
-            <returns></returns>
+            <param name="left">A left hand side operand for equality comparision that can be converter to Kelvin.</param>
+            <param name="right">A right hand side operand for equality comparision that can be converted to Kelvin.</param>
+            <returns>A true if the temperature objects represent a same temperature intensity, false otherwise.</returns>
         </member>
         <member name="M:UltimateTemperatureLibrary.TemperatureUnit.op_Equality(UltimateTemperatureLibrary.TemperatureUnit,UltimateTemperatureLibrary.TemperatureUnit)">
             <summary>
-            
+            Determines whether the specified temperature objects are equal. Different scales are transformed appropriately.
             </summary>
-            <param name="left"></param>
-            <param name="right"></param>
+            <param name="left">A left hand side operand for equality comparision.</param>
+            <param name="right">A right hand side operand for equality comparision.</param>
             <returns></returns>
         </member>
         <member name="M:UltimateTemperatureLibrary.TemperatureUnit.op_Inequality(UltimateTemperatureLibrary.TemperatureUnit,UltimateTemperatureLibrary.TemperatureUnit)">
             <summary>
-            
+            Determines whether the specified temperature objects are not equal. Different scales are transformed appropriately.
             </summary>
-            <param name="left"></param>
-            <param name="right"></param>
+            <param name="left">A left hand side operand for inequality comparision.</param>
+            <param name="right">A right hand side operand for inequality comparision.</param>
             <returns></returns>
         </member>
         <member name="M:UltimateTemperatureLibrary.TemperatureUnit.GetHashCode">

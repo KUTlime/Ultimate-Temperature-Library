@@ -58,21 +58,21 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
-        /// 
+        /// Determines whether the specified temperature objects are equal. Different scales are transformed appropriately.
         /// </summary>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
-        /// <returns></returns>
+        /// <param name="left">A left hand side operand for equality comparision that can be converter to Kelvin.</param>
+        /// <param name="right">A right hand side operand for equality comparision that can be converted to Kelvin.</param>
+        /// <returns>A true if the temperature objects represent a same temperature intensity, false otherwise.</returns>
         public static bool Equals(IConversionToKelvin left, IConversionToKelvin right)
         {
             return Equals(left.ToKelvin().Value, right.ToKelvin().Value) || Math.Abs(left.ToKelvin().Value - right.ToKelvin().Value) < OperationOverDoublePrecision.HighPrecision;
         }
 
         /// <summary>
-        /// 
+        /// Determines whether the specified temperature objects are equal. Different scales are transformed appropriately.
         /// </summary>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
+        /// <param name="left">A left hand side operand for equality comparision.</param>
+        /// <param name="right">A right hand side operand for equality comparision.</param>
         /// <returns></returns>
         public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
         {
@@ -80,10 +80,10 @@ namespace UltimateTemperatureLibrary
         }
 
         /// <summary>
-        /// 
+        /// Determines whether the specified temperature objects are not equal. Different scales are transformed appropriately.
         /// </summary>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
+        /// <param name="left">A left hand side operand for inequality comparision.</param>
+        /// <param name="right">A right hand side operand for inequality comparision.</param>
         /// <returns></returns>
         public static bool operator !=(TemperatureUnit left, TemperatureUnit right)
         {
