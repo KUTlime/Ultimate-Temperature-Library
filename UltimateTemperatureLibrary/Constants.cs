@@ -15,7 +15,7 @@
         /// An absolute thermodynamic zero temperature in [°] Fahrenheit.
         /// </summary>
         /// <seealso href="https://en.wikipedia.org/wiki/Fahrenheit"/>
-        public const double AbsoluteZeroInFahrenheit = -459.67;
+        public const double AbsoluteZeroInFahrenheit = -459.670000000000000000000000000000;
 
         /// <summary>
         /// An absolute thermodynamic zero temperature in Kelvin.

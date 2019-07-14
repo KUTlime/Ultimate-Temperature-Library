@@ -84,12 +84,42 @@ namespace UltimateTemperatureLibrary
         protected internal override string[] RegexPatterns { get; set; } = { "K", "Kel", "Kelvin", "kel", "kelvin", "KELVIN" };
 
         /// <summary>
-        /// Return stored temperature value with unit identification.
+        /// Converts the temperature numeric value of this instance to its equivalent string representation.
         /// </summary>
-        /// <returns>A stored temperature value and unit in form of string.</returns>
+        /// <returns>The string representation of the value of this instance with the temperature scale identification.</returns>
         public override string ToString()
         {
             return $"{Value} {RegexPatterns[0]}";
+        }
+
+        /// <summary>
+        /// Converts the temperature numeric value of this instance to its equivalent string representation using the specified format.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance with the temperature scale identification.</returns>
+        /// <param name="format">A numeric format string.</param>
+        public new string ToString(string format)
+        {
+            return $"{Value.ToString(format)} {RegexPatterns[0]}";
+        }
+
+        /// <summary>
+        /// Converts the temperature numeric value of this instance to its equivalent string representation using the specified culture-specific format information.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance with the temperature scale identification.</returns>
+        public new string ToString(IFormatProvider provider)
+        {
+            return $"{Value.ToString(provider)} {RegexPatterns[0]}";
+        }
+
+        /// <summary>
+        /// Converts the temperature numeric value of this instance to its equivalent string representation using the specified format and culture-specific format information.
+        /// </summary>
+        /// <returns>The string representation of the value of this instance with the temperature scale identification.</returns>
+        /// <param name="format">A numeric format string.</param>
+        /// <param name="provider">An object that supplies culture-specific formatting information.</param>
+        public new string ToString(string format, IFormatProvider provider)
+        {
+            return $"{Value.ToString(format, provider)} °{RegexPatterns[0]}";
         }
 
         #region Interface implementation

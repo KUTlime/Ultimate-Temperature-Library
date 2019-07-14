@@ -18,7 +18,10 @@
     <RepositoryType>Git</RepositoryType>
     <Title>Ultimate Temperature Library</Title>
     <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>v1.1.1.0:
+    <PackageReleaseNotes>v1.2.0.0:
+- Added ToString format capabilities to all temperature scales.
+
+v1.1.1.0:
 - Added some missing commentary of IEquality methods for common ancestor of all temperature scales.
 
 v1.1.0.0:
@@ -29,7 +32,7 @@ v1.0.0.0:
 </PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>1.1.1</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
