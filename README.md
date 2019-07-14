@@ -112,6 +112,8 @@ If you subtract two temperatures, you will receive the temperature difference in
 ## ToString override
 Every unit except Kelvin is denoted as [° PrimaryUnitID] by default. Kelvin is denoted as [K]. This PrimaryUnitID is stored in `RegexPatterns` property and its override also ToString() behaviour.
 
+All units supports a double `ToString()` formating. Overloaded `ToString(string format)`, `ToString(IFormatProvider provider)` and `ToString(string format, IFormatProvider provider)` are provided to consumers of UTL.
+
 ## Interface implementation
 Every single temperature scale unit implements IConversionToUNIT, where UNIT stands for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur and Rømer, to be able to convert and compare with any another unit.
 
@@ -147,7 +149,6 @@ If no unit is present in string with valid float number, **Kelvin unit** is used
 
 ## Why only addition and subtraction between units is implemented?
 Multiplication/division doesn't really make any physical sense with temperature as an intensity quantity.
-
 
 # Links
 [Temperature Wikipedia](https://en.wikipedia.org/wiki/Temperature)<br>
