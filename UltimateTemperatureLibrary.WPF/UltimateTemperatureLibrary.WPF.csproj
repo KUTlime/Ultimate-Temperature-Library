@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Version>2.0.0</Version>
+		<Authors>Radek Zahradník, Ph.D.</Authors>
+		<Product>Ultimate Temperature Converter</Product>
+		<PackageId>UltimateTemperatureConverter</PackageId>
+		<Copyright>All rights reserved.</Copyright>
+		<PackageIcon>thermometer.ico</PackageIcon>
+		<PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
+		<RepositoryType>Git</RepositoryType>
+		<PackageTags>temperature unit conversion celsius rankine kelvine fahrenheit</PackageTags>
+		<Nullable>Enable</Nullable>
+		<ApplicationIcon>thermometer.ico</ApplicationIcon>
+		<PackageReleaseNotes>
+			v2.0.0 (2020-06-05):
+			- Upgrade from .NET Framework to .NET Core.
+			- User interaction has been redesigned.
+		</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\UltimateTemperatureLibrary\UltimateTemperatureLibrary.csproj" />
+	</ItemGroup>
+
+</Project>
