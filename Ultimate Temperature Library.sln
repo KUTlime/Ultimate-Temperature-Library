@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary", "UltimateTemperatureLibrary\UltimateTemperatureLibrary.csproj", "{8D03FB4E-3E0C-4107-AA8D-FC5E0514ADE9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateTemperatureLibrary.UnitTests", "UltimateTemperatureLibrary.UnitTests\UltimateTemperatureLibrary.UnitTests.csproj", "{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateTemperatureLibrary.WPF", "UltimateTemperatureLibrary.WPF\UltimateTemperatureLibrary.WPF.csproj", "{1C7A12D7-76BA-4F17-BAAE-20F04645A35F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA18515F-ED14-41F8-B23E-DD1F285AE5A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C7A12D7-76BA-4F17-BAAE-20F04645A35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C7A12D7-76BA-4F17-BAAE-20F04645A35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C7A12D7-76BA-4F17-BAAE-20F04645A35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C7A12D7-76BA-4F17-BAAE-20F04645A35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
