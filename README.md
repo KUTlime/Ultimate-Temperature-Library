@@ -101,7 +101,7 @@ Temperature is the intensive quantity. A mixture of two objects or substances wi
 
 On the other hand, it makes sense to add/subtract the temperature and the temperature difference.
 
-![equation](https://latex.codecogs.com/gif.latex?T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\par&space;\Delta&space;T&space;=&space;T_2&space;-&space;T_1)
+![equation](http://latex.codecogs.com/gif.latex?\dpi{100}&space;\forall&space;(\Delta&space;T&space;=&space;T_2&space;-&space;T_1):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Leftrightarrow&space;T_1&space;=&space;T_2&space;-&space;\Delta&space;T)
 
 If you add two temperatures, the second temperature unit is interpreted as ΔT and it is added to the first temperature. If the second temperature is negative, the magnitude of the second temperature is subtracted from the first temperature.
 
