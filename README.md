@@ -105,7 +105,7 @@ On the other hand, it makes sense to add/subtract the temperature and the temper
 
 If you add two temperatures, the second temperature unit is interpreted as ΔT and it is added to the first temperature. If the second temperature is negative, the magnitude of the second temperature is subtracted from the first temperature.
 
-![equation](http://latex.codecogs.com/gif.latex?\dpi{100}&space;\forall&space;(\Delta&space;T&space;>&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;>&space;T_1&space;\newline&space;\forall&space;(\Delta&space;T&space;<&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;<&space;T_1&space;&space;)
+![equation](http://latex.codecogs.com/gif.latex?\dpi{100}&space;\newline&space;\forall&space;(\Delta&space;T&space;>&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;>&space;T_1&space;\newline&space;\forall&space;(\Delta&space;T&space;<&space;T_{Ref_{lower}}):&space;T_2&space;=&space;T_1&space;&plus;&space;\Delta&space;T&space;\Rightarrow&space;T_2&space;<&space;T_1&space;&space;)
 
 If you subtract two temperatures, you will receive the temperature difference in the corresponding unit.
 
