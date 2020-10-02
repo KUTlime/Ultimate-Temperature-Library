@@ -1,48 +1,63 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
-    <RootNamespace>UltimateTemperatureLibrary</RootNamespace>
-    <AssemblyName>UltimateTemperatureLibrary</AssemblyName>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
-    <Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature. You can use double-to-double converter, classes for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur, Rømer, their conversion, comparison and more.</Description>
-    <LangVersion>latest</LangVersion>
-    <Authors>Radek Zahradník, Ph.D.</Authors>
-    <Copyright>© Radek Zahradník. All rights reserved.</Copyright>
-    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageSummary>Ultimate temperature library for complex interaction with temperature.</PackageSummary>
-    <Summary>Ultimate temperature library for complex interaction with temperature.</Summary>
-    <PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
-    <Title>Ultimate Temperature Library</Title>
-    <Product>Ultimate Temperature Library</Product>
-    <PackageReleaseNotes>v1.2.0.0:
-- Added ToString format capabilities to all temperature scales.
+	<PropertyGroup>
+		<TargetFramework>netstandard1.0</TargetFramework>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<RootNamespace>UltimateTemperatureLibrary</RootNamespace>
+		<AssemblyName>UltimateTemperatureLibrary</AssemblyName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
+		<Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature. You can use double-to-double converter, classes for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur, Rømer, their conversion, comparison and more.</Description>
+		<LangVersion>latest</LangVersion>
+		<Authors>Radek Zahradník, Ph.D.</Authors>
+		<Copyright>© Radek Zahradník. All rights reserved.</Copyright>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageSummary>Ultimate temperature library for complex interaction with temperature.</PackageSummary>
+		<Summary>Ultimate temperature library for complex interaction with temperature.</Summary>
+		<PackageProjectUrl>https://github.com/KUTlime/Ultimate-Temperature-Library/blob/master/README.md</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/KUTlime/Ultimate-Temperature-Library</RepositoryUrl>
+		<RepositoryType>Git</RepositoryType>
+		<Title>Ultimate Temperature Library</Title>
+		<Product>Ultimate Temperature Library</Product>
+		<PackageReleaseNotes>
+			v1.2.1.0:
+			- Fixed NuGet warning about package icon during build.
+			- Added source link with publish to NuGet.org symbol servers
 
-v1.1.1.0:
-- Added some missing commentary of IEquality methods for common ancestor of all temperature scales.
+			v1.2.0.0:
+			- Added ToString format capabilities to all temperature scales.
 
-v1.1.0.0:
-- Removed public modifier to Regex patterns.
+			v1.1.1.0:
+			- Added some missing commentary of IEquality methods for common ancestor of all temperature scales.
 
-v1.0.0.0:
-- Initial public release.
-</PackageReleaseNotes>
-    <PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>1.2.0</Version>
-  </PropertyGroup>
+			v1.1.0.0:
+			- Removed public modifier to Regex patterns.
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\radek\source\repos\Ultimate Temperature Library\UltimateTemperatureLibrary\UltimateTemperatureLibrary.xml</DocumentationFile>
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+			v1.0.0.0:
+			- Initial public release.
+		</PackageReleaseNotes>
+		<PackageIcon>thermometer.png</PackageIcon>
+		<PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<Version>1.2.1</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>C:\Users\radek\source\repos\Ultimate Temperature Library\UltimateTemperatureLibrary\UltimateTemperatureLibrary.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<Optimize>false</Optimize>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Properties\" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+		<None Include="..\Resources\thermometer.png" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>
