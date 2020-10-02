@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '5.7.0'
+    checkLatest: true
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    packagesToPack: '**/UltimateTemperatureLibrary.csproj'
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    feedsToUse: 'config'
+    includeNugetOrg: true
+
+
