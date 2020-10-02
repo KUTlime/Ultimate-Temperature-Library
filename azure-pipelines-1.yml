@@ -17,7 +17,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+    projects: '**/UltimateTemperatureLibrary.csproj'
 - task: NuGetCommand@2
   inputs:
     command: pack
