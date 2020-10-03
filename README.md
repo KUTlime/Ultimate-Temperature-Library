@@ -17,6 +17,10 @@ The Ultimate Temperature Library brings complex functionality when working with 
 - Accuracy at least to 12 decimal places, 13 decimal places mostly.
 - Well documented.
 
+# CI/CD status
+|Build & Test | Publish to NuGet.org |
+|-|-|
+| [![Build Status](https://kutlime.visualstudio.com/Ultimate%20Temperature%20Library/_apis/build/status/Build%20%26%20Test?branchName=master)](https://kutlime.visualstudio.com/Ultimate%20Temperature%20Library/_build/latest?definitionId=4&branchName=master) | [![Build Status](https://kutlime.visualstudio.com/Ultimate%20Temperature%20Library/_apis/build/status/Publish%20to%20NuGet.org?branchName=master)](https://kutlime.visualstudio.com/Ultimate%20Temperature%20Library/_build/latest?definitionId=5&branchName=master) |
 
 # Basic use
 ```csharp
