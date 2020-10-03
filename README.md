@@ -9,6 +9,7 @@ The Ultimate Temperature Library brings complex functionality when working with 
 - Implements **all** temperature scales
 - .NET Standard 1.0 (multiplatform use)
 - Well tested (+10000 UTs)
+- Source link support
 - OOP approach (type safety when manipulation is in place)
 - Flexible parsing from string
 - Double2Double convertor 
