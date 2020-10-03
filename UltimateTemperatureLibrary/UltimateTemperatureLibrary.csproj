@@ -8,6 +8,9 @@
 		<RootNamespace>UltimateTemperatureLibrary</RootNamespace>
 		<AssemblyName>UltimateTemperatureLibrary</AssemblyName>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<PackageTags>Temperature Celsius Kelvin Fahrenheit Rankin Delisle Newton Réaumur Rømer Conventer Convertor</PackageTags>
 		<Description>The ultimate temperature library for .NET world. This library provides a large collection of tools necessary for interaction with temperature. You can use double-to-double converter, classes for Kelvin, Celsius, Fahrenheit, Rankine, Delisle, Newton, Réaumur, Rømer, their conversion, comparison and more.</Description>
 		<LangVersion>latest</LangVersion>
@@ -22,9 +25,16 @@
 		<Title>Ultimate Temperature Library</Title>
 		<Product>Ultimate Temperature Library</Product>
 		<PackageReleaseNotes>
+			v1.2.3.0:
+			- Added deterministic build.
+			- Added EmbedTrackingSource.
+
+			v1.2.2.0:
+			- Fixed missing PDBs. Source link and upload to symbol server does not really work properly.
+
 			v1.2.1.0:
 			- Fixed NuGet warning about package icon during build.
-			- Added source link with publish to NuGet.org symbol servers
+			- Added source link with publish to NuGet.org symbol servers.
 
 			v1.2.0.0:
 			- Added ToString format capabilities to all temperature scales.
@@ -41,7 +51,7 @@
 		<PackageIcon>thermometer.png</PackageIcon>
 		<PackageIconUrl>https://raw.githubusercontent.com/KUTlime/Ultimate-Temperature-Library/master/Resources/thermometer.png</PackageIconUrl>
 		<PackageLicenseUrl></PackageLicenseUrl>
-		<Version>1.2.1</Version>
+		<Version>1.2.3</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
