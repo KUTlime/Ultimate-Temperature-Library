@@ -95,47 +95,47 @@ namespace UltimateTemperatureLibrary.WPF
 
 			if (textBox.Name == CelsiusTextBox.Name)
 			{
-				return Double.TryParse(CelsiusTextBox.Text, out var valueCel)
+				return double.TryParse(CelsiusTextBox.Text, out double valueCel)
 					? new Celsius(valueCel)
 					: new Celsius(CelsiusTextBox.Text);
 			}
 
 			if (textBox.Name == FahrenheitTextBox.Name)
 			{
-				return Double.TryParse(FahrenheitTextBox.Text, out var valueFah)
+				return double.TryParse(FahrenheitTextBox.Text, out double valueFah)
 					? new Fahrenheit(valueFah)
 					: new Fahrenheit(FahrenheitTextBox.Text);
 			}
 
 			if (textBox.Name == RankineTextBox.Name)
 			{
-				return Double.TryParse(RankineTextBox.Text, out var valueRan)
+				return double.TryParse(RankineTextBox.Text, out double valueRan)
 					? new Rankine(valueRan)
 					: new Rankine(RankineTextBox.Text);
 			}
 
 			if (textBox.Name == DelisleTextBox.Name)
 			{
-				return Double.TryParse(DelisleTextBox.Text, out var valueDel)
+				return double.TryParse(DelisleTextBox.Text, out double valueDel)
 					? new Delisle(valueDel)
 					: new Delisle(DelisleTextBox.Text);
 			}
 
 			if (textBox.Name == NewtonTextBox.Name)
 			{
-				return Double.TryParse(NewtonTextBox.Text, out var valueNew)
+				return double.TryParse(NewtonTextBox.Text, out double valueNew)
 					? new Newton(valueNew)
 					: new Newton(NewtonTextBox.Text);
 			}
 
 			if (textBox.Name == RéaumurTextBox.Name)
 			{
-				return Double.TryParse(RéaumurTextBox.Text, out var valueRéau)
+				return double.TryParse(RéaumurTextBox.Text, out double valueRéau)
 					? new Réaumur(valueRéau)
 					: new Réaumur(RéaumurTextBox.Text);
 			}
 
-			return Double.TryParse(RømerTextBox.Text, out var valueRøm)
+			return double.TryParse(RømerTextBox.Text, out double valueRøm)
 				? new Rømer(valueRøm)
 				: new Rømer(RéaumurTextBox.Text);
 		}
@@ -194,6 +194,6 @@ namespace UltimateTemperatureLibrary.WPF
 		}
 	}
 
-	class LostFocusUpdate
+	internal class LostFocusUpdate
 	{ }
 }
